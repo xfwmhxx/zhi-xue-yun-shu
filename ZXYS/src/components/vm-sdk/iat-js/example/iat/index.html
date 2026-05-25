@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <br />
+    <div>浏览器录音听写：<button id="btn_control">开始录音</button></div>
+    <br />
+    <div>
+      音频文件听写(16kHz, s16le, pcm)： <input type="file" id="input_file" />
+    </div>
+    <div id="result"></div>
+    <script>
+      var APPID = "c8224d46";
+      var API_SECRET = "ZWY3N2E2N2M3OTMwMDhjN2M4MmFmNDA2";
+      var API_KEY = "ee158cb8c4783636496edadfabba8fa8";
+    </script>
+    <script src="../crypto-js.js"></script>
+    <script src=".../dist/index.umd.js"></script>
+    <script src="./index.js"></script>
+    <script src="./input-file.js"></script>
+  </body>
+</html>

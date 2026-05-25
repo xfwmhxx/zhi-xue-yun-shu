@@ -1,0 +1,504 @@
+[
+  {
+    "Name": "当归生姜羊肉汤",
+    "Source": "《金匮要略》卷上腹满寒疝宿食病脉证治",
+    "Ingredient": [
+      { "FoodName": "当归", "Amount": 3, "Unit": 0 },
+      { "FoodName": "生姜", "Amount": 5, "Unit": 0 },
+      { "FoodName": "羊肉", "Amount": 1, "Unit": 1 }
+    ],
+    "Recipe": "上三味，以水八升，煮取三升，温服七合，日三服。若寒多者，加生姜成一斤；痛多而呕者，加橘皮二两、白术一两。加生姜者，亦加水五升，煮取三升二合，服之。",
+    "efficacy": "寒疝，腹中痛及胁痛里急者，当归生姜羊肉汤主之。产后腹中疞痛，当归生姜羊肉汤主之；并治腹中寒疝，虚劳不足。"
+  },
+  {
+    "Name": "野猪肉食方",
+    "Source": "《太平圣惠方》卷九十六",
+    "Ingredient": [{ "FoodName": "野猪肉", "Amount": 1, "Unit": 1 }],
+    "Recipe": "上切作片，着椒、姜、葱白，煮令熟，空腹食之，作羹亦得。",
+    "efficacy": "治久患野鸡痔，下血不止，肛边疼痛，食之十损无不瘥。"
+  },
+  {
+    "Name": "百合鸡子黄汤",
+    "Source": "《金匮要略》卷上百合狐惑阴阳毒病脉证治",
+    "Ingredient": [
+      { "FoodName": "百合", "Amount": 7, "Unit": 0 },
+      { "FoodName": "鸡子黄", "Amount": 1, "Unit": 0 }
+    ],
+    "Recipe": "上以水洗百合，渍一宿，当白沫出，去其水，更以泉水二升，煎取一升，去滓，内鸡子黄，搅匀，煎五分，温服。",
+    "efficacy": "治百合病，吐之后者，虚烦惊悸，口干咽燥，神志不定。"
+  },
+  {
+    "Name": "猪肤汤",
+    "Source": "《伤寒论》",
+    "Ingredient": [
+      { "FoodName": "猪肤", "Amount": 1, "Unit": 1 },
+      { "FoodName": "白蜜", "Amount": 1, "Unit": 0 },
+      { "FoodName": "白粉", "Amount": 5, "Unit": 0 }
+    ],
+    "Recipe": "上以水一斗，煮猪肤取五升，去滓，加白蜜一升，白粉五合，熬香，和令相得，温分六服。",
+    "efficacy": "治少阴病，下利咽痛，胸满心烦者。"
+  },
+  {
+    "Name": "葱豉汤",
+    "Source": "《肘后备急方》",
+    "Ingredient": [
+      { "FoodName": "葱白", "Amount": 3, "Unit": 0 },
+      { "FoodName": "淡豆豉", "Amount": 1, "Unit": 0 }
+    ],
+    "Recipe": "上二味，以水三升，煮取一升，顿服取汗。",
+    "efficacy": "治伤寒初起，头痛发热，脉浮而紧，无汗恶寒。"
+  },
+  {
+    "Name": "姜糖饮",
+    "Source": "《本草纲目》",
+    "Ingredient": [
+      { "FoodName": "生姜", "Amount": 3, "Unit": 0 },
+      { "FoodName": "红糖", "Amount": 2, "Unit": 0 }
+    ],
+    "Recipe": "生姜切丝，加水煮沸，入红糖溶化，趁热顿服。",
+    "efficacy": "治风寒感冒，恶寒发热，头痛鼻塞，呕逆。"
+  },
+  {
+    "Name": "黄芪炖母鸡",
+    "Source": "《随息居饮食谱》",
+    "Ingredient": [
+      { "FoodName": "黄芪", "Amount": 5, "Unit": 0 },
+      { "FoodName": "母鸡", "Amount": 1, "Unit": 1 }
+    ],
+    "Recipe": "将黄芪纳入鸡腹，加水炖烂，加盐少许，食肉喝汤。",
+    "efficacy": "治气虚乏力，食少便溏，自汗盗汗，产后虚羸。"
+  },
+  {
+    "Name": "茯苓饼",
+    "Source": "《经验方》",
+    "Ingredient": [
+      { "FoodName": "茯苓", "Amount": 4, "Unit": 0 },
+      { "FoodName": "面粉", "Amount": 8, "Unit": 0 },
+      { "FoodName": "白糖", "Amount": 2, "Unit": 0 }
+    ],
+    "Recipe": "茯苓研末，与面粉、白糖和匀，加水调糊，摊薄饼，烙熟。",
+    "efficacy": "健脾补中，宁心安神。用于脾虚食少，心悸失眠。"
+  },
+  {
+    "Name": "山药粥",
+    "Source": "《饮膳正要》",
+    "Ingredient": [
+      { "FoodName": "山药", "Amount": 1, "Unit": 1 },
+      { "FoodName": "粳米", "Amount": 1, "Unit": 0 }
+    ],
+    "Recipe": "山药去皮切块，与粳米同煮粥，空腹食。",
+    "efficacy": "补脾养胃，生津益肺。治脾虚泄泻，消渴，遗精。"
+  },
+  {
+    "Name": "桂圆红枣汤",
+    "Source": "《泉州本草》",
+    "Ingredient": [
+      { "FoodName": "桂圆肉", "Amount": 3, "Unit": 0 },
+      { "FoodName": "红枣", "Amount": 5, "Unit": 0 },
+      { "FoodName": "冰糖", "Amount": 1, "Unit": 0 }
+    ],
+    "Recipe": "上三味，加水煎汤，温服。",
+    "efficacy": "养血安神，补益心脾。治贫血，神经衰弱，失眠健忘。"
+  },
+  {
+    "Name": "枸杞菊花茶",
+    "Source": "《医级》",
+    "Ingredient": [
+      { "FoodName": "枸杞子", "Amount": 2, "Unit": 0 },
+      { "FoodName": "菊花", "Amount": 1, "Unit": 0 }
+    ],
+    "Recipe": "沸水冲泡，代茶饮。",
+    "efficacy": "滋肾养肝，明目清热。治肝肾阴虚，目涩昏花。"
+  },
+  {
+    "Name": "百合莲子羹",
+    "Source": "《食疗本草》",
+    "Ingredient": [
+      { "FoodName": "百合", "Amount": 3, "Unit": 0 },
+      { "FoodName": "莲子", "Amount": 3, "Unit": 0 },
+      { "FoodName": "冰糖", "Amount": 2, "Unit": 0 }
+    ],
+    "Recipe": "百合、莲子煮烂，加冰糖溶化，食之。",
+    "efficacy": "润肺止咳，养心安神。治虚烦惊悸，失眠多梦。"
+  },
+  {
+    "Name": "当归补血汤",
+    "Source": "《内外伤辨惑论》",
+    "Ingredient": [
+      { "FoodName": "黄芪", "Amount": 5, "Unit": 0 },
+      { "FoodName": "当归", "Amount": 1, "Unit": 0 }
+    ],
+    "Recipe": "上二味，以水二盏，煎至一盏，去滓，空腹温服。",
+    "efficacy": "补气生血。治劳倦内伤，肌热面赤，脉洪大而虚。"
+  },
+  {
+    "Name": "姜枣茶",
+    "Source": "《伤寒论》",
+    "Ingredient": [
+      { "FoodName": "生姜", "Amount": 3, "Unit": 0 },
+      { "FoodName": "大枣", "Amount": 5, "Unit": 0 }
+    ],
+    "Recipe": "上二味，水煎，温服。",
+    "efficacy": "调和营卫，温中散寒。治风寒感冒，胃寒腹痛。"
+  },
+  {
+    "Name": "薏苡仁粥",
+    "Source": "《本草纲目》",
+    "Ingredient": [
+      { "FoodName": "薏苡仁", "Amount": 5, "Unit": 0 },
+      { "FoodName": "粳米", "Amount": 2, "Unit": 0 }
+    ],
+    "Recipe": "上二味，煮粥，空腹食。",
+    "efficacy": "健脾渗湿，除痹止泻。治水肿，脚气，泄泻。"
+  },
+  {
+    "Name": "莲子猪肚汤",
+    "Source": "《医学入门》",
+    "Ingredient": [
+      { "FoodName": "莲子", "Amount": 4, "Unit": 0 },
+      { "FoodName": "猪肚", "Amount": 1, "Unit": 0 }
+    ],
+    "Recipe": "猪肚洗净，纳入莲子，缝合，炖熟，切片，调味食。",
+    "efficacy": "补脾益胃，固精止带。治脾虚泄泻，遗精带下。"
+  },
+  {
+    "Name": "木耳红枣汤",
+    "Source": "《补缺肘后方》",
+    "Ingredient": [
+      { "FoodName": "黑木耳", "Amount": 3, "Unit": 0 },
+      { "FoodName": "红枣", "Amount": 5, "Unit": 0 }
+    ],
+    "Recipe": "上二味，水煎，食枣喝汤。",
+    "efficacy": "补血止血。治贫血，月经过多，痔疮出血。"
+  },
+  {
+    "Name": "赤小豆鲤鱼汤",
+    "Source": "《外台秘要》",
+    "Ingredient": [
+      { "FoodName": "赤小豆", "Amount": 8, "Unit": 0 },
+      { "FoodName": "鲤鱼", "Amount": 1, "Unit": 1 }
+    ],
+    "Recipe": "上二味，加水煮烂，分次食之。",
+    "efficacy": "利水消肿，清热解毒。治水肿，脚气，黄疸。"
+  },
+  {
+    "Name": "杏仁雪梨汤",
+    "Source": "《本草纲目》",
+    "Ingredient": [
+      { "FoodName": "甜杏仁", "Amount": 3, "Unit": 0 },
+      { "FoodName": "雪梨", "Amount": 1, "Unit": 0 },
+      { "FoodName": "冰糖", "Amount": 2, "Unit": 0 }
+    ],
+    "Recipe": "雪梨去皮核，与杏仁、冰糖同炖，食梨饮汤。",
+    "efficacy": "润肺止咳，清热化痰。治肺燥咳嗽，咽干口渴。"
+  },
+  {
+    "Name": "杜仲腰花汤",
+    "Source": "《本草权度》",
+    "Ingredient": [
+      { "FoodName": "杜仲", "Amount": 3, "Unit": 0 },
+      { "FoodName": "猪腰", "Amount": 1, "Unit": 0 }
+    ],
+    "Recipe": "杜仲煎汁，猪腰切片，同煮汤，调味食。",
+    "efficacy": "补肝肾，强筋骨。治肾虚腰痛，腰膝酸软。"
+  },
+  {
+    "Name": "银耳莲子汤",
+    "Source": "《中国药膳学》",
+    "Ingredient": [
+      { "FoodName": "银耳", "Amount": 2, "Unit": 0 },
+      { "FoodName": "莲子", "Amount": 3, "Unit": 0 },
+      { "FoodName": "冰糖", "Amount": 2, "Unit": 0 }
+    ],
+    "Recipe": "银耳泡发，与莲子同炖，入冰糖溶化。",
+    "efficacy": "滋阴润肺，养心安神。治虚劳咳嗽，心悸失眠。"
+  },
+  {
+    "Name": "陈皮鸭",
+    "Source": "《饮膳正要》",
+    "Ingredient": [
+      { "FoodName": "陈皮", "Amount": 2, "Unit": 0 },
+      { "FoodName": "老鸭", "Amount": 1, "Unit": 1 }
+    ],
+    "Recipe": "陈皮纳入鸭腹，加水炖烂，调味食。",
+    "efficacy": "理气健脾，燥湿化痰。治脾胃气滞，脘腹胀满。"
+  },
+  {
+    "Name": "龙眼肉粥",
+    "Source": "《慈山参入》",
+    "Ingredient": [
+      { "FoodName": "龙眼肉", "Amount": 3, "Unit": 0 },
+      { "FoodName": "粳米", "Amount": 2, "Unit": 0 },
+      { "FoodName": "红枣", "Amount": 3, "Unit": 0 }
+    ],
+    "Recipe": "上三味，煮粥，空腹食。",
+    "efficacy": "补心脾，益气血。治心悸怔忡，失眠健忘。"
+  },
+  {
+    "Name": "参苓粥",
+    "Source": "《圣济总录》",
+    "Ingredient": [
+      { "FoodName": "人参", "Amount": 1, "Unit": 0 },
+      { "FoodName": "茯苓", "Amount": 3, "Unit": 0 },
+      { "FoodName": "粳米", "Amount": 2, "Unit": 0 }
+    ],
+    "Recipe": "人参、茯苓为末，与粳米煮粥，空腹食。",
+    "efficacy": "补气健脾，安神益智。治脾胃虚弱，神疲乏力。"
+  },
+  {
+    "Name": "猪蹄汤",
+    "Source": "《千金方》",
+    "Ingredient": [
+      { "FoodName": "猪蹄", "Amount": 2, "Unit": 0 },
+      { "FoodName": "通草", "Amount": 1, "Unit": 0 }
+    ],
+    "Recipe": "上二味，加水炖烂，食肉喝汤。",
+    "efficacy": "补血通乳。治产后乳少，气血虚弱。"
+  },
+  {
+    "Name": "天麻鱼头汤",
+    "Source": "《食疗本草》",
+    "Ingredient": [
+      { "FoodName": "天麻", "Amount": 2, "Unit": 0 },
+      { "FoodName": "鱼头", "Amount": 1, "Unit": 0 }
+    ],
+    "Recipe": "天麻切片，与鱼头同炖，调味食。",
+    "efficacy": "平肝熄风，祛风通络。治头痛眩晕，肢体麻木。"
+  },
+  {
+    "Name": "枸杞羊肉汤",
+    "Source": "《饮膳正要》",
+    "Ingredient": [
+      { "FoodName": "枸杞子", "Amount": 3, "Unit": 0 },
+      { "FoodName": "羊肉", "Amount": 1, "Unit": 1 }
+    ],
+    "Recipe": "上二味，加水炖烂，调味食。",
+    "efficacy": "补肾益精，温中暖下。治肾虚腰冷，阳痿遗精。"
+  },
+  {
+    "Name": "生姜饴糖汤",
+    "Source": "《本草纲目》",
+    "Ingredient": [
+      { "FoodName": "生姜", "Amount": 3, "Unit": 0 },
+      { "FoodName": "饴糖", "Amount": 2, "Unit": 0 }
+    ],
+    "Recipe": "生姜切丝，水煎去渣，入饴糖溶化，温服。",
+    "efficacy": "温中散寒，健脾和胃。治脾胃虚寒，脘腹冷痛。"
+  },
+  {
+    "Name": "桑葚膏",
+    "Source": "《本草纲目》",
+    "Ingredient": [
+      { "FoodName": "桑葚", "Amount": 5, "Unit": 1 },
+      { "FoodName": "蜂蜜", "Amount": 3, "Unit": 0 }
+    ],
+    "Recipe": "桑葚煎汁，浓缩，加蜂蜜收膏，每服一匙。",
+    "efficacy": "滋阴补血，生津润燥。治眩晕耳鸣，须发早白。"
+  },
+  {
+    "Name": "薄荷粥",
+    "Source": "《寿亲养老新书》",
+    "Ingredient": [
+      { "FoodName": "薄荷", "Amount": 2, "Unit": 0 },
+      { "FoodName": "粳米", "Amount": 2, "Unit": 0 }
+    ],
+    "Recipe": "薄荷煎汁，与粳米煮粥，空腹食。",
+    "efficacy": "疏散风热，清利头目。治风热感冒，头痛目赤。"
+  },
+  {
+    "Name": "黑芝麻糊",
+    "Source": "《本草纲目》",
+    "Ingredient": [
+      { "FoodName": "黑芝麻", "Amount": 5, "Unit": 0 },
+      { "FoodName": "粳米", "Amount": 2, "Unit": 0 }
+    ],
+    "Recipe": "黑芝麻炒香，与粳米同磨，加水煮糊。",
+    "efficacy": "补肝肾，润五脏。治肝肾不足，须发早白。"
+  },
+  {
+    "Name": "瓜蒌薤白白酒汤",
+    "Source": "《金匮要略》",
+    "Ingredient": [
+      { "FoodName": "瓜蒌实", "Amount": 1, "Unit": 0 },
+      { "FoodName": "薤白", "Amount": 3, "Unit": 0 },
+      { "FoodName": "白酒", "Amount": 2, "Unit": 0 }
+    ],
+    "Recipe": "上三味，同煮，取二升，分温再服。",
+    "efficacy": "通阳散结，行气祛痰。治胸痹，喘息咳唾，胸背痛。"
+  },
+  {
+    "Name": "艾叶鸡蛋汤",
+    "Source": "《本草纲目》",
+    "Ingredient": [
+      { "FoodName": "艾叶", "Amount": 2, "Unit": 0 },
+      { "FoodName": "鸡蛋", "Amount": 2, "Unit": 0 }
+    ],
+    "Recipe": "艾叶煎汁，打入鸡蛋，煮熟，食蛋喝汤。",
+    "efficacy": "温经止血，散寒止痛。治虚寒性痛经，月经过多。"
+  },
+  {
+    "Name": "山楂红糖汤",
+    "Source": "《食疗本草》",
+    "Ingredient": [
+      { "FoodName": "山楂", "Amount": 3, "Unit": 0 },
+      { "FoodName": "红糖", "Amount": 2, "Unit": 0 }
+    ],
+    "Recipe": "山楂煎水，入红糖溶化，温服。",
+    "efficacy": "活血化瘀，消食化积。治产后瘀滞腹痛，食积不化。"
+  },
+  {
+    "Name": "杏仁粥",
+    "Source": "《食医心鉴》",
+    "Ingredient": [
+      { "FoodName": "杏仁", "Amount": 2, "Unit": 0 },
+      { "FoodName": "粳米", "Amount": 2, "Unit": 0 }
+    ],
+    "Recipe": "杏仁去皮尖，与粳米煮粥，空腹食。",
+    "efficacy": "止咳平喘，润肠通便。治咳嗽气喘，肠燥便秘。"
+  },
+  {
+    "Name": "鲫鱼汤",
+    "Source": "《备急千金要方》",
+    "Ingredient": [
+      { "FoodName": "鲫鱼", "Amount": 1, "Unit": 1 },
+      { "FoodName": "生姜", "Amount": 3, "Unit": 0 }
+    ],
+    "Recipe": "上二味，加水炖汤，调味食。",
+    "efficacy": "健脾利湿，和中开胃。治脾胃虚弱，水肿。"
+  },
+  {
+    "Name": "苏叶姜糖饮",
+    "Source": "《本草汇言》",
+    "Ingredient": [
+      { "FoodName": "紫苏叶", "Amount": 2, "Unit": 0 },
+      { "FoodName": "生姜", "Amount": 3, "Unit": 0 },
+      { "FoodName": "红糖", "Amount": 2, "Unit": 0 }
+    ],
+    "Recipe": "苏叶、生姜煎水，入红糖溶化，温服。",
+    "efficacy": "解表散寒，行气和胃。治风寒感冒，恶心呕吐。"
+  },
+  {
+    "Name": "地黄粥",
+    "Source": "《饮膳正要》",
+    "Ingredient": [
+      { "FoodName": "生地黄", "Amount": 3, "Unit": 0 },
+      { "FoodName": "粳米", "Amount": 2, "Unit": 0 }
+    ],
+    "Recipe": "生地黄煎汁，与粳米煮粥，空腹食。",
+    "efficacy": "清热凉血，养阴生津。治热病伤阴，消渴。"
+  },
+  {
+    "Name": "益母草煮鸡蛋",
+    "Source": "《食疗本草》",
+    "Ingredient": [
+      { "FoodName": "益母草", "Amount": 3, "Unit": 0 },
+      { "FoodName": "鸡蛋", "Amount": 2, "Unit": 0 }
+    ],
+    "Recipe": "上二味，加水同煮，蛋熟去壳再煮，食蛋喝汤。",
+    "efficacy": "活血调经，利水消肿。治月经不调，产后恶露不尽。"
+  },
+  {
+    "Name": "酸枣仁粥",
+    "Source": "《圣惠方》",
+    "Ingredient": [
+      { "FoodName": "酸枣仁", "Amount": 3, "Unit": 0 },
+      { "FoodName": "粳米", "Amount": 2, "Unit": 0 }
+    ],
+    "Recipe": "酸枣仁研末，与粳米煮粥，空腹食。",
+    "efficacy": "养心安神，敛汗。治虚烦不眠，心悸盗汗。"
+  },
+  {
+    "Name": "橘皮粥",
+    "Source": "《圣济总录》",
+    "Ingredient": [
+      { "FoodName": "橘皮", "Amount": 2, "Unit": 0 },
+      { "FoodName": "粳米", "Amount": 2, "Unit": 0 }
+    ],
+    "Recipe": "橘皮煎汁，与粳米煮粥，空腹食。",
+    "efficacy": "理气和胃，燥湿化痰。治脾胃气滞，脘腹胀满。"
+  },
+  {
+    "Name": "黄芪粥",
+    "Source": "《冷庐医话》",
+    "Ingredient": [
+      { "FoodName": "黄芪", "Amount": 3, "Unit": 0 },
+      { "FoodName": "粳米", "Amount": 2, "Unit": 0 }
+    ],
+    "Recipe": "黄芪煎汁，与粳米煮粥，空腹食。",
+    "efficacy": "补气升阳，益卫固表。治气虚乏力，自汗。"
+  },
+  {
+    "Name": "阿胶粥",
+    "Source": "《寿世青编》",
+    "Ingredient": [
+      { "FoodName": "阿胶", "Amount": 2, "Unit": 0 },
+      { "FoodName": "粳米", "Amount": 2, "Unit": 0 }
+    ],
+    "Recipe": "粳米煮粥，将熟时入阿胶，烊化，空腹食。",
+    "efficacy": "滋阴补血，润肺止血。治血虚萎黄，虚劳咳嗽。"
+  },
+  {
+    "Name": "车前子粥",
+    "Source": "《圣惠方》",
+    "Ingredient": [
+      { "FoodName": "车前子", "Amount": 3, "Unit": 0 },
+      { "FoodName": "粳米", "Amount": 2, "Unit": 0 }
+    ],
+    "Recipe": "车前子布包，与粳米煮粥，去包，空腹食。",
+    "efficacy": "利水渗湿，清热明目。治水肿，淋证，目赤。"
+  },
+  {
+    "Name": "香薷饮",
+    "Source": "《太平惠民和剂局方》",
+    "Ingredient": [
+      { "FoodName": "香薷", "Amount": 2, "Unit": 0 },
+      { "FoodName": "厚朴", "Amount": 1, "Unit": 0 },
+      { "FoodName": "白扁豆", "Amount": 2, "Unit": 0 }
+    ],
+    "Recipe": "上三味，水煎，冷服。",
+    "efficacy": "解表化湿，和中消暑。治暑湿感冒，腹痛吐泻。"
+  },
+  {
+    "Name": "麻黄汤",
+    "Source": "《伤寒论》",
+    "Ingredient": [
+      { "FoodName": "麻黄", "Amount": 3, "Unit": 0 },
+      { "FoodName": "桂枝", "Amount": 2, "Unit": 0 },
+      { "FoodName": "杏仁", "Amount": 3, "Unit": 0 },
+      { "FoodName": "甘草", "Amount": 1, "Unit": 0 }
+    ],
+    "Recipe": "上四味，以水九升，先煮麻黄，去上沫，内诸药，煮取二升半，去滓，温服八合。",
+    "efficacy": "发汗解表，宣肺平喘。治外感风寒，恶寒发热，无汗而喘。"
+  },
+  {
+    "Name": "葛根汤",
+    "Source": "《伤寒论》",
+    "Ingredient": [
+      { "FoodName": "葛根", "Amount": 4, "Unit": 0 },
+      { "FoodName": "麻黄", "Amount": 3, "Unit": 0 },
+      { "FoodName": "桂枝", "Amount": 2, "Unit": 0 },
+      { "FoodName": "生姜", "Amount": 3, "Unit": 0 },
+      { "FoodName": "甘草", "Amount": 2, "Unit": 0 },
+      { "FoodName": "芍药", "Amount": 2, "Unit": 0 },
+      { "FoodName": "大枣", "Amount": 4, "Unit": 0 }
+    ],
+    "Recipe": "上七味，以水一斗，先煮麻黄、葛根，去上沫，内诸药，煮取三升，去滓，温服一升。",
+    "efficacy": "发汗解表，升津舒筋。治太阳病，项背强几几，无汗恶风。"
+  },
+  {
+    "Name": "小青龙汤",
+    "Source": "《伤寒论》",
+    "Ingredient": [
+      { "FoodName": "麻黄", "Amount": 3, "Unit": 0 },
+      { "FoodName": "芍药", "Amount": 3, "Unit": 0 },
+      { "FoodName": "细辛", "Amount": 1, "Unit": 0 },
+      { "FoodName": "干姜", "Amount": 3, "Unit": 0 },
+      { "FoodName": "甘草", "Amount": 3, "Unit": 0 },
+      { "FoodName": "桂枝", "Amount": 3, "Unit": 0 },
+      { "FoodName": "五味子", "Amount": 2, "Unit": 0 },
+      { "FoodName": "半夏", "Amount": 3, "Unit": 0 }
+    ],
+    "Recipe": "上八味，以水一斗，先煮麻黄，去上沫，内诸药，煮取三升，去滓，温服一升。",
+    "efficacy": "解表散寒，温肺化饮。治外寒内饮证，恶寒发热，咳喘痰多。"
+  }
+]

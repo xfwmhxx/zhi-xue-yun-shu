@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'No1';
+  /* 自定义字体名称 */
+  src: url('@/public/Fonts/XiangJiaHongZiJi-ZhongHuaJinBangTi-2.ttf') format('truetype');
+  /* 字体文件路径 */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'No2';
+  /* 自定义字体名称 */
+  src: url('@/public/Fonts/AaHouLangXingKai-2.ttf') format('truetype');
+  /* 字体文件路径 */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'No3';
+  /* 自定义字体名称 */
+  src: url('@/public/Fonts/AaLanTingTiShi-LuoBiRuShen-2.ttf') format('truetype');
+  /* 字体文件路径 */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'No4';
+  /* 自定义字体名称 */
+  src: url('@/public/Fonts/AaYanGeXing-2.ttf') format('truetype');
+  /* 字体文件路径 */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'No5';
+  /* 自定义字体名称 */
+  src: url('@/public/Fonts/DunHuangFeiTian-XingKaiTi-2.ttf') format('truetype');
+  /* 字体文件路径 */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'No6';
+  /* 自定义字体名称 */
+  src: url('@/public/Fonts/ZiHunXianJianQiXiaTi\(ShangYongXuShouQuan\)-2.ttf') format('truetype');
+  /* 字体文件路径 */
+  font-weight: normal;
+  font-style: normal;
+}

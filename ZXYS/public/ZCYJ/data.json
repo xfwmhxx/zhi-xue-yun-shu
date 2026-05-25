@@ -1,0 +1,1076 @@
+[
+  {
+    "Name": "一捻金",
+    "Prescription": [
+      { "MedicineName": "大黄", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "炒牵牛子", "Amount": 200, "Unit": "g" },
+      { "MedicineName": "槟榔", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "人参", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "朱砂", "Amount": 30, "Unit": "g" }
+    ],
+    "Recipe": "以上五味，朱砂水飞成极细粉；其余大黄等四味粉碎成细粉，与上述粉末配研，过筛，混匀，即得。",
+    "Attending": "消食导滞，祛痰通便。用于脾胃不和、痰食阻滞所致的积滞，症见停食停乳、腹胀便秘、痰盛喘咳。",
+    "SAP1": "本品为黄棕色至黄褐色的粉末；气微，味微苦、涩。",
+    "UAD": "口服。周岁以内一次0.3g，一至三岁一次0.6g，四至六岁一次1g，一日1~2次；或遵医嘱。",
+    "Precautions": "不宜久服。",
+    "Specifications": "每袋装1.2g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "二妙丸",
+    "Prescription": [
+      { "MedicineName": "苍术", "Amount": 500, "Unit": "g" },
+      { "MedicineName": "黄柏", "Amount": 500, "Unit": "g" }
+    ],
+    "Recipe": "以上二味，粉碎成细粉，过筛，混匀，用水泛丸，干燥，即得。",
+    "Attending": "燥湿清热。用于湿热下注，足膝红肿热痛，下肢丹毒，白带，阴囊湿痒。",
+    "SAP1": "本品为黄棕色的水丸；气微香，味苦、辛。",
+    "UAD": "口服，一次6~9g，一日2次。",
+    "Precautions": "忌食辛辣、生冷食物。",
+    "Specifications": "每瓶装60g",
+    "SAP2": "密封，防潮"
+  },
+  {
+    "Name": "十全大补丸",
+    "Prescription": [
+      { "MedicineName": "党参", "Amount": 80, "Unit": "g" },
+      { "MedicineName": "白术", "Amount": 80, "Unit": "g" },
+      { "MedicineName": "茯苓", "Amount": 80, "Unit": "g" },
+      { "MedicineName": "甘草", "Amount": 40, "Unit": "g" },
+      { "MedicineName": "当归", "Amount": 120, "Unit": "g" },
+      { "MedicineName": "川芎", "Amount": 40, "Unit": "g" },
+      { "MedicineName": "白芍", "Amount": 80, "Unit": "g" },
+      { "MedicineName": "熟地黄", "Amount": 120, "Unit": "g" },
+      { "MedicineName": "黄芪", "Amount": 80, "Unit": "g" },
+      { "MedicineName": "肉桂", "Amount": 20, "Unit": "g" }
+    ],
+    "Recipe": "以上十味，粉碎成细粉，过筛，混匀。每100g粉末用炼蜜35~50g加适量的水泛丸，干燥，制成水蜜丸；或加炼蜜100~120g制成大蜜丸，即得。",
+    "Attending": "温补气血。用于气血两虚，面色苍白，气短心悸，头晕自汗，体倦乏力，四肢不温，月经量多。",
+    "SAP1": "本品为棕褐色至黑褐色的水蜜丸或大蜜丸；气香，味甘而微辛。",
+    "UAD": "口服，水蜜丸一次6g，大蜜丸一次1丸，一日2~3次。",
+    "Precautions": "孕妇慎用。外感发热者忌服。",
+    "Specifications": "大蜜丸每丸重9g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "八珍丸",
+    "Prescription": [
+      { "MedicineName": "党参", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "白术", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "茯苓", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "甘草", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "当归", "Amount": 150, "Unit": "g" },
+      { "MedicineName": "川芎", "Amount": 75, "Unit": "g" },
+      { "MedicineName": "白芍", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "熟地黄", "Amount": 150, "Unit": "g" }
+    ],
+    "Recipe": "以上八味，粉碎成细粉，过筛，混匀。每100g粉末用炼蜜40~50g加适量的水泛丸，干燥，制成水蜜丸；或加炼蜜90~110g制成大蜜丸，即得。",
+    "Attending": "补气益血。用于气血两虚，面色萎黄，食欲不振，四肢乏力，月经过多。",
+    "SAP1": "本品为棕黑色的水蜜丸或黑褐色至黑色的大蜜丸；味甜、微苦。",
+    "UAD": "口服，水蜜丸一次6g，大蜜丸一次1丸，一日2次。",
+    "Precautions": "忌食生冷油腻。",
+    "Specifications": "大蜜丸每丸重9g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "人参健脾丸",
+    "Prescription": [
+      { "MedicineName": "人参", "Amount": 25, "Unit": "g" },
+      { "MedicineName": "白术", "Amount": 150, "Unit": "g" },
+      { "MedicineName": "茯苓", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "山药", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "陈皮", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "木香", "Amount": 25, "Unit": "g" },
+      { "MedicineName": "砂仁", "Amount": 25, "Unit": "g" },
+      { "MedicineName": "黄芪", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "当归", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "酸枣仁", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "远志", "Amount": 25, "Unit": "g" }
+    ],
+    "Recipe": "以上十一味，粉碎成细粉，过筛，混匀。每100g粉末加炼蜜90~110g制成大蜜丸，即得。",
+    "Attending": "健脾益气，和胃止泻。用于脾胃虚弱所致的饮食不化、脘闷嘈杂、恶心呕吐、腹痛便溏、不思饮食、体弱倦怠。",
+    "SAP1": "本品为棕褐色至棕黑色的大蜜丸；气香，味甜、微苦。",
+    "UAD": "口服，一次2丸，一日2次。",
+    "Precautions": "忌食生冷油腻。",
+    "Specifications": "每丸重6g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "六味地黄丸",
+    "Prescription": [
+      { "MedicineName": "熟地黄", "Amount": 160, "Unit": "g" },
+      { "MedicineName": "山茱萸", "Amount": 80, "Unit": "g" },
+      { "MedicineName": "山药", "Amount": 80, "Unit": "g" },
+      { "MedicineName": "泽泻", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "牡丹皮", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "茯苓", "Amount": 60, "Unit": "g" }
+    ],
+    "Recipe": "以上六味，粉碎成细粉，过筛，混匀。每100g粉末加炼蜜35~50g与适量的水泛丸，干燥，制成水蜜丸；或加炼蜜80~110g制成大蜜丸，即得。",
+    "Attending": "滋阴补肾。用于肾阴亏损，头晕耳鸣，腰膝酸软，骨蒸潮热，盗汗遗精，消渴。",
+    "SAP1": "本品为棕黑色的水蜜丸或黑褐色的大蜜丸；味甜而酸。",
+    "UAD": "口服，水蜜丸一次6g，大蜜丸一次1丸，一日2次。",
+    "Precautions": "忌辛辣油腻。",
+    "Specifications": "大蜜丸每丸重9g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "知柏地黄丸",
+    "Prescription": [
+      { "MedicineName": "知母", "Amount": 40, "Unit": "g" },
+      { "MedicineName": "黄柏", "Amount": 40, "Unit": "g" },
+      { "MedicineName": "熟地黄", "Amount": 160, "Unit": "g" },
+      { "MedicineName": "山茱萸", "Amount": 80, "Unit": "g" },
+      { "MedicineName": "山药", "Amount": 80, "Unit": "g" },
+      { "MedicineName": "泽泻", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "牡丹皮", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "茯苓", "Amount": 60, "Unit": "g" }
+    ],
+    "Recipe": "以上八味，粉碎成细粉，过筛，混匀。每100g粉末加炼蜜35~50g与适量的水泛丸，干燥，制成水蜜丸；或加炼蜜80~110g制成大蜜丸，即得。",
+    "Attending": "滋阴降火。用于阴虚火旺，潮热盗汗，口干咽痛，耳鸣遗精，小便短赤。",
+    "SAP1": "本品为棕黑色的水蜜丸或黑褐色的大蜜丸；味甜而酸，微苦。",
+    "UAD": "口服，水蜜丸一次6g，大蜜丸一次1丸，一日2次。",
+    "Precautions": "脾胃虚寒者慎用。",
+    "Specifications": "大蜜丸每丸重9g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "杞菊地黄丸",
+    "Prescription": [
+      { "MedicineName": "枸杞子", "Amount": 40, "Unit": "g" },
+      { "MedicineName": "菊花", "Amount": 40, "Unit": "g" },
+      { "MedicineName": "熟地黄", "Amount": 160, "Unit": "g" },
+      { "MedicineName": "山茱萸", "Amount": 80, "Unit": "g" },
+      { "MedicineName": "山药", "Amount": 80, "Unit": "g" },
+      { "MedicineName": "泽泻", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "牡丹皮", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "茯苓", "Amount": 60, "Unit": "g" }
+    ],
+    "Recipe": "以上八味，粉碎成细粉，过筛，混匀。每100g粉末加炼蜜35~50g与适量的水泛丸，干燥，制成水蜜丸；或加炼蜜80~110g制成大蜜丸，即得。",
+    "Attending": "滋肾养肝。用于肝肾阴亏，眩晕耳鸣，羞明畏光，迎风流泪，视物昏花。",
+    "SAP1": "本品为棕黑色的水蜜丸或黑褐色的大蜜丸；味甜、微酸。",
+    "UAD": "口服，水蜜丸一次6g，大蜜丸一次1丸，一日2次。",
+    "Precautions": "忌食辛辣刺激之物。",
+    "Specifications": "大蜜丸每丸重9g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "归脾丸",
+    "Prescription": [
+      { "MedicineName": "党参", "Amount": 80, "Unit": "g" },
+      { "MedicineName": "白术", "Amount": 160, "Unit": "g" },
+      { "MedicineName": "黄芪", "Amount": 80, "Unit": "g" },
+      { "MedicineName": "甘草", "Amount": 40, "Unit": "g" },
+      { "MedicineName": "茯苓", "Amount": 160, "Unit": "g" },
+      { "MedicineName": "远志", "Amount": 160, "Unit": "g" },
+      { "MedicineName": "酸枣仁", "Amount": 80, "Unit": "g" },
+      { "MedicineName": "龙眼肉", "Amount": 80, "Unit": "g" },
+      { "MedicineName": "当归", "Amount": 80, "Unit": "g" },
+      { "MedicineName": "木香", "Amount": 40, "Unit": "g" },
+      { "MedicineName": "大枣", "Amount": 40, "Unit": "g" }
+    ],
+    "Recipe": "以上十一味，粉碎成细粉，过筛，混匀。每100g粉末加炼蜜25~40g与适量的水泛丸，干燥，制成水蜜丸；或加炼蜜80~100g制成大蜜丸，即得。",
+    "Attending": "益气健脾，养血安神。用于心脾两虚，气短心悸，失眠多梦，头昏头晕，肢倦乏力，食欲不振，崩漏便血。",
+    "SAP1": "本品为棕褐色的大蜜丸或水蜜丸；气微，味甘而后微苦、辛。",
+    "UAD": "口服，水蜜丸一次6g，大蜜丸一次1丸，一日3次。",
+    "Precautions": "忌食生冷油腻。",
+    "Specifications": "大蜜丸每丸重9g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "天王补心丸",
+    "Prescription": [
+      { "MedicineName": "丹参", "Amount": 25, "Unit": "g" },
+      { "MedicineName": "当归", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "石菖蒲", "Amount": 25, "Unit": "g" },
+      { "MedicineName": "党参", "Amount": 25, "Unit": "g" },
+      { "MedicineName": "茯苓", "Amount": 25, "Unit": "g" },
+      { "MedicineName": "五味子", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "麦冬", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "天冬", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "地黄", "Amount": 200, "Unit": "g" },
+      { "MedicineName": "玄参", "Amount": 25, "Unit": "g" },
+      { "MedicineName": "远志", "Amount": 25, "Unit": "g" },
+      { "MedicineName": "酸枣仁", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "柏子仁", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "桔梗", "Amount": 25, "Unit": "g" },
+      { "MedicineName": "甘草", "Amount": 25, "Unit": "g" }
+    ],
+    "Recipe": "以上十五味，粉碎成细粉，过筛，混匀。每100g粉末加炼蜜20~30g与适量的水泛丸，干燥，制成水蜜丸；或加炼蜜50~70g制成大蜜丸，即得。",
+    "Attending": "滋阴养血，补心安神。用于心阴不足，心悸健忘，失眠多梦，大便干燥。",
+    "SAP1": "本品为棕黑色的水蜜丸或黑褐色的大蜜丸；气微香，味甜、微苦。",
+    "UAD": "口服，水蜜丸一次6g，大蜜丸一次1丸，一日2次。",
+    "Precautions": "忌食辛辣腥膻。",
+    "Specifications": "大蜜丸每丸重9g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "香砂养胃丸",
+    "Prescription": [
+      { "MedicineName": "白术", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "茯苓", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "陈皮", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "半夏", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "甘草", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "香附", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "砂仁", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "木香", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "枳实", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "厚朴", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "藿香", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "豆蔻", "Amount": 50, "Unit": "g" }
+    ],
+    "Recipe": "以上十二味，粉碎成细粉，过筛，混匀。用水泛丸，干燥，即得。",
+    "Attending": "温中和胃。用于胃阳不足、湿阻气滞所致的胃痛、痞满，症见胃痛隐隐、脘闷不舒、呕吐酸水、嘈杂不适、不思饮食、四肢倦怠。",
+    "SAP1": "本品为黑色的水丸；气微，味辛、微苦。",
+    "UAD": "口服，一次9g，一日2次。",
+    "Precautions": "孕妇慎用。",
+    "Specifications": "每袋装9g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "附子理中丸",
+    "Prescription": [
+      { "MedicineName": "附子", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "党参", "Amount": 200, "Unit": "g" },
+      { "MedicineName": "白术", "Amount": 150, "Unit": "g" },
+      { "MedicineName": "干姜", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "甘草", "Amount": 100, "Unit": "g" }
+    ],
+    "Recipe": "以上五味，粉碎成细粉，过筛，混匀。每100g粉末加炼蜜35~50g与适量的水泛丸，干燥，制成水蜜丸；或加炼蜜100~120g制成大蜜丸，即得。",
+    "Attending": "温中健脾。用于脾胃虚寒，脘腹冷痛，呕吐泄泻，手足不温。",
+    "SAP1": "本品为棕褐色至黑褐色的大蜜丸或水蜜丸；气微，味微甜而辛辣。",
+    "UAD": "口服，水蜜丸一次6g，大蜜丸一次1丸，一日2~3次。",
+    "Precautions": "孕妇慎用。",
+    "Specifications": "大蜜丸每丸重9g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "逍遥丸",
+    "Prescription": [
+      { "MedicineName": "柴胡", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "当归", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "白芍", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "白术", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "茯苓", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "甘草", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "薄荷", "Amount": 20, "Unit": "g" },
+      { "MedicineName": "生姜", "Amount": 50, "Unit": "g" }
+    ],
+    "Recipe": "以上八味，粉碎成细粉，过筛，混匀。每100g粉末加炼蜜135~145g制成大蜜丸；或用水泛丸，干燥，即得。",
+    "Attending": "疏肝健脾，养血调经。用于肝郁脾虚所致的郁闷不舒、胸胁胀痛、头晕目眩、食欲减退、月经不调。",
+    "SAP1": "本品为棕褐色的大蜜丸或水丸；味甜、微苦。",
+    "UAD": "口服，大蜜丸一次1丸，水丸一次6~9g，一日2次。",
+    "Precautions": "忌食生冷油腻。",
+    "Specifications": "大蜜丸每丸重9g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "加味逍遥丸",
+    "Prescription": [
+      { "MedicineName": "柴胡", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "当归", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "白芍", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "白术", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "茯苓", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "甘草", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "牡丹皮", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "栀子", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "薄荷", "Amount": 20, "Unit": "g" },
+      { "MedicineName": "生姜", "Amount": 50, "Unit": "g" }
+    ],
+    "Recipe": "以上十味，粉碎成细粉，过筛，混匀。用水泛丸，干燥，即得。",
+    "Attending": "疏肝清热，健脾养血。用于肝郁血虚，肝脾不和，两胁胀痛，头晕目眩，倦怠食少，月经不调，脐腹胀痛。",
+    "SAP1": "本品为黄棕色的水丸；味甜、微苦。",
+    "UAD": "口服，一次6~9g，一日2次。",
+    "Precautions": "孕妇慎用。",
+    "Specifications": "每袋装6g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "保和丸",
+    "Prescription": [
+      { "MedicineName": "山楂", "Amount": 300, "Unit": "g" },
+      { "MedicineName": "六神曲", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "半夏", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "茯苓", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "陈皮", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "连翘", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "莱菔子", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "麦芽", "Amount": 50, "Unit": "g" }
+    ],
+    "Recipe": "以上八味，粉碎成细粉，过筛，混匀，用水泛丸，干燥，即得。",
+    "Attending": "消食导滞，和胃。用于食积停滞，脘腹胀满，嗳腐吞酸，不欲饮食。",
+    "SAP1": "本品为灰棕色至褐色的水丸；气微香，味微酸、涩、甜。",
+    "UAD": "口服，一次6~9g，一日2次。",
+    "Precautions": "忌食生冷油腻不易消化食物。",
+    "Specifications": "每袋装6g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "越鞠丸",
+    "Prescription": [
+      { "MedicineName": "香附", "Amount": 200, "Unit": "g" },
+      { "MedicineName": "川芎", "Amount": 200, "Unit": "g" },
+      { "MedicineName": "栀子", "Amount": 200, "Unit": "g" },
+      { "MedicineName": "苍术", "Amount": 200, "Unit": "g" },
+      { "MedicineName": "六神曲", "Amount": 200, "Unit": "g" }
+    ],
+    "Recipe": "以上五味，粉碎成细粉，过筛，混匀，用水泛丸，干燥，即得。",
+    "Attending": "理气解郁，宽中除满。用于胸脘痞闷，腹中胀满，饮食停滞，嗳气吞酸。",
+    "SAP1": "本品为深棕色至棕褐色的水丸；气香，味微涩、苦。",
+    "UAD": "口服，一次6~9g，一日2次。",
+    "Precautions": "忌食生冷油腻。",
+    "Specifications": "每袋装6g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "木香顺气丸",
+    "Prescription": [
+      { "MedicineName": "木香", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "砂仁", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "香附", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "槟榔", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "甘草", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "陈皮", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "厚朴", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "枳壳", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "苍术", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "青皮", "Amount": 100, "Unit": "g" }
+    ],
+    "Recipe": "以上十味，粉碎成细粉，过筛，混匀，用水泛丸，干燥，即得。",
+    "Attending": "行气化湿，健脾和胃。用于湿浊中阻、脾胃不和所致的胸膈痞闷、脘腹胀痛、呕吐恶心、嗳气纳呆。",
+    "SAP1": "本品为棕褐色的水丸；气香，味苦。",
+    "UAD": "口服，一次6~9g，一日2~3次。",
+    "Precautions": "孕妇慎用。",
+    "Specifications": "每袋装6g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "藿香正气水",
+    "Prescription": [
+      { "MedicineName": "苍术", "Amount": 160, "Unit": "g" },
+      { "MedicineName": "陈皮", "Amount": 160, "Unit": "g" },
+      { "MedicineName": "厚朴", "Amount": 160, "Unit": "g" },
+      { "MedicineName": "白芷", "Amount": 240, "Unit": "g" },
+      { "MedicineName": "茯苓", "Amount": 240, "Unit": "g" },
+      { "MedicineName": "大腹皮", "Amount": 240, "Unit": "g" },
+      { "MedicineName": "生半夏", "Amount": 160, "Unit": "g" },
+      { "MedicineName": "甘草", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "广藿香油", "Amount": 0.8, "Unit": "ml" },
+      { "MedicineName": "紫苏叶油", "Amount": 0.4, "Unit": "ml" }
+    ],
+    "Recipe": "以上十味，苍术、陈皮、厚朴、白芷分别用60%乙醇渗漉，茯苓用40%乙醇渗漉，大腹皮用60%乙醇渗漉，收集渗漉液，回收乙醇，浓缩成清膏；生半夏用70%乙醇渗漉，收集渗漉液，回收乙醇，浓缩成清膏。广藿香油、紫苏叶油用乙醇适量溶解，合并上述清膏，混匀，加乙醇调整总量至1000ml，静置，滤过，即得。",
+    "Attending": "解表化湿，理气和中。用于外感风寒、内伤湿滞或夏伤暑湿所致的感冒，症见头痛昏重、胸膈痞闷、脘腹胀痛、呕吐泄泻。",
+    "SAP1": "本品为深棕色的澄清液体（久贮略有浑浊）；味辛、苦。",
+    "UAD": "口服，一次5~10ml，一日2次，用时摇匀。",
+    "Precautions": "忌烟、酒及辛辣、生冷、油腻食物。",
+    "Specifications": "每支装10ml",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "银翘解毒丸",
+    "Prescription": [
+      { "MedicineName": "金银花", "Amount": 200, "Unit": "g" },
+      { "MedicineName": "连翘", "Amount": 200, "Unit": "g" },
+      { "MedicineName": "薄荷", "Amount": 120, "Unit": "g" },
+      { "MedicineName": "荆芥", "Amount": 80, "Unit": "g" },
+      { "MedicineName": "淡豆豉", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "牛蒡子", "Amount": 120, "Unit": "g" },
+      { "MedicineName": "桔梗", "Amount": 120, "Unit": "g" },
+      { "MedicineName": "甘草", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "淡竹叶", "Amount": 80, "Unit": "g" }
+    ],
+    "Recipe": "以上九味，粉碎成细粉，过筛，混匀。每100g粉末加炼蜜80~90g制成大蜜丸，即得。",
+    "Attending": "疏风解表，清热解毒。用于风热感冒，症见发热头痛、咳嗽口干、咽喉疼痛。",
+    "SAP1": "本品为棕褐色的大蜜丸；气芳香，味微甜而苦、辛。",
+    "UAD": "口服，一次1丸，一日2~3次。",
+    "Precautions": "忌烟、酒及辛辣、生冷、油腻食物。",
+    "Specifications": "每丸重9g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "感冒清热颗粒",
+    "Prescription": [
+      { "MedicineName": "荆芥穗", "Amount": 200, "Unit": "g" },
+      { "MedicineName": "薄荷", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "防风", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "柴胡", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "紫苏叶", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "葛根", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "桔梗", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "苦杏仁", "Amount": 80, "Unit": "g" },
+      { "MedicineName": "白芷", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "苦地丁", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "芦根", "Amount": 160, "Unit": "g" }
+    ],
+    "Recipe": "以上十一味，取荆芥穗、薄荷、紫苏叶提取挥发油，蒸馏后的水溶液另器收集；其余防风等八味加水煎煮二次，合并煎液，滤过，滤液与上述水溶液合并，浓缩至相对密度为1.35~1.38的清膏，加入蔗糖、糊精适量，制成颗粒，干燥，加入挥发油，混匀，即得。",
+    "Attending": "疏风散寒，解表清热。用于风寒感冒，头痛发热，恶寒身痛，鼻流清涕，咳嗽咽干。",
+    "SAP1": "本品为棕黄色的颗粒；味甜、微苦。",
+    "UAD": "开水冲服，一次1袋，一日2次。",
+    "Precautions": "忌烟、酒及辛辣、生冷、油腻食物。",
+    "Specifications": "每袋装12g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "板蓝根颗粒",
+    "Prescription": [{ "MedicineName": "板蓝根", "Amount": 1400, "Unit": "g" }],
+    "Recipe": "取板蓝根，加水煎煮二次，合并煎液，滤过，滤液浓缩至相对密度为1.20的清膏，加乙醇使含醇量达60%，静置，取上清液，回收乙醇，浓缩至适量，加入蔗糖、糊精适量，制成颗粒，干燥，即得。",
+    "Attending": "清热解毒，凉血利咽。用于肺胃热盛所致的咽喉肿痛、口咽干燥；急性扁桃体炎见上述证候者。",
+    "SAP1": "本品为浅棕黄色至棕褐色的颗粒；味甜、微苦。",
+    "UAD": "开水冲服，一次5~10g，一日3~4次。",
+    "Precautions": "忌烟酒、辛辣、鱼腥食物。",
+    "Specifications": "每袋装10g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "牛黄解毒片",
+    "Prescription": [
+      { "MedicineName": "牛黄", "Amount": 5, "Unit": "g" },
+      { "MedicineName": "雄黄", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "石膏", "Amount": 200, "Unit": "g" },
+      { "MedicineName": "大黄", "Amount": 200, "Unit": "g" },
+      { "MedicineName": "黄芩", "Amount": 150, "Unit": "g" },
+      { "MedicineName": "桔梗", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "冰片", "Amount": 25, "Unit": "g" },
+      { "MedicineName": "甘草", "Amount": 50, "Unit": "g" }
+    ],
+    "Recipe": "以上八味，雄黄水飞成极细粉；大黄、黄芩、桔梗、甘草粉碎成细粉；牛黄、冰片研细；石膏研成极细粉。将上述粉末配研，过筛，混匀，加淀粉浆适量，制成颗粒，干燥，压片，即得。",
+    "Attending": "清热解毒。用于火热内盛，咽喉肿痛，牙龈肿痛，口舌生疮，目赤肿痛。",
+    "SAP1": "本品为素片或包衣片，素片显棕黄色；有冰片香气，味微苦、辛。",
+    "UAD": "口服，一次3片，一日2~3次。",
+    "Precautions": "孕妇禁用。不宜久服。",
+    "Specifications": "每片重0.3g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "黄连上清片",
+    "Prescription": [
+      { "MedicineName": "黄连", "Amount": 20, "Unit": "g" },
+      { "MedicineName": "栀子", "Amount": 80, "Unit": "g" },
+      { "MedicineName": "连翘", "Amount": 80, "Unit": "g" },
+      { "MedicineName": "蔓荆子", "Amount": 80, "Unit": "g" },
+      { "MedicineName": "防风", "Amount": 40, "Unit": "g" },
+      { "MedicineName": "荆芥穗", "Amount": 80, "Unit": "g" },
+      { "MedicineName": "白芷", "Amount": 80, "Unit": "g" },
+      { "MedicineName": "黄芩", "Amount": 80, "Unit": "g" },
+      { "MedicineName": "菊花", "Amount": 160, "Unit": "g" },
+      { "MedicineName": "薄荷", "Amount": 40, "Unit": "g" },
+      { "MedicineName": "大黄", "Amount": 240, "Unit": "g" },
+      { "MedicineName": "黄柏", "Amount": 40, "Unit": "g" },
+      { "MedicineName": "桔梗", "Amount": 80, "Unit": "g" },
+      { "MedicineName": "川芎", "Amount": 40, "Unit": "g" },
+      { "MedicineName": "石膏", "Amount": 40, "Unit": "g" },
+      { "MedicineName": "旋覆花", "Amount": 20, "Unit": "g" },
+      { "MedicineName": "甘草", "Amount": 40, "Unit": "g" }
+    ],
+    "Recipe": "以上十七味，取白芷、大黄、桔梗、川芎、防风、黄连、黄柏、黄芩、石膏、旋覆花、甘草粉碎成细粉；剩余栀子、连翘、蔓荆子、荆芥穗、菊花、薄荷加水煎煮二次，合并煎液，滤过，滤液浓缩成清膏，与上述细粉混匀，干燥，粉碎，过筛，加辅料适量，混匀，制成颗粒，压片，包衣，即得。",
+    "Attending": "清热通便，散风止痛。用于上焦风热，头晕脑胀，牙龈肿痛，口舌生疮，咽喉红肿，耳痛耳鸣，暴发火眼，大便燥结，小便黄赤。",
+    "SAP1": "本品为糖衣片，除去糖衣后显棕褐色；气香，味苦。",
+    "UAD": "口服，一次6片，一日2次。",
+    "Precautions": "孕妇慎用。脾胃虚寒者禁用。",
+    "Specifications": "每片重0.3g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "龙胆泻肝丸",
+    "Prescription": [
+      { "MedicineName": "龙胆", "Amount": 120, "Unit": "g" },
+      { "MedicineName": "柴胡", "Amount": 120, "Unit": "g" },
+      { "MedicineName": "黄芩", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "栀子", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "泽泻", "Amount": 120, "Unit": "g" },
+      { "MedicineName": "木通", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "车前子", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "当归", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "地黄", "Amount": 120, "Unit": "g" },
+      { "MedicineName": "甘草", "Amount": 60, "Unit": "g" }
+    ],
+    "Recipe": "以上十味，粉碎成细粉，过筛，混匀，用水泛丸，干燥，即得。",
+    "Attending": "清肝胆，利湿热。用于肝胆湿热，头晕目赤，耳鸣耳聋，胁痛口苦，尿赤，湿热带下。",
+    "SAP1": "本品为黄褐色的小丸；味苦。",
+    "UAD": "口服，一次3~6g，一日2次。",
+    "Precautions": "孕妇慎用。",
+    "Specifications": "每袋装6g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "通宣理肺丸",
+    "Prescription": [
+      { "MedicineName": "紫苏叶", "Amount": 144, "Unit": "g" },
+      { "MedicineName": "前胡", "Amount": 96, "Unit": "g" },
+      { "MedicineName": "桔梗", "Amount": 144, "Unit": "g" },
+      { "MedicineName": "苦杏仁", "Amount": 72, "Unit": "g" },
+      { "MedicineName": "麻黄", "Amount": 96, "Unit": "g" },
+      { "MedicineName": "甘草", "Amount": 72, "Unit": "g" },
+      { "MedicineName": "陈皮", "Amount": 96, "Unit": "g" },
+      { "MedicineName": "半夏", "Amount": 72, "Unit": "g" },
+      { "MedicineName": "茯苓", "Amount": 96, "Unit": "g" },
+      { "MedicineName": "枳壳", "Amount": 96, "Unit": "g" },
+      { "MedicineName": "黄芩", "Amount": 96, "Unit": "g" }
+    ],
+    "Recipe": "以上十一味，粉碎成细粉，过筛，混匀。每100g粉末加炼蜜140~160g制成大蜜丸，即得。",
+    "Attending": "解表散寒，宣肺止嗽。用于风寒束表、肺气不宣所致的感冒咳嗽，症见发热、恶寒、咳嗽、鼻塞流涕、头痛无汗、肢体酸痛。",
+    "SAP1": "本品为黑棕色至黑褐色的大蜜丸；味微甜、苦。",
+    "UAD": "口服，一次2丸，一日2~3次。",
+    "Precautions": "孕妇慎用。",
+    "Specifications": "每丸重6g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "急支糖浆",
+    "Prescription": [
+      { "MedicineName": "鱼腥草", "Amount": 250, "Unit": "g" },
+      { "MedicineName": "金荞麦", "Amount": 150, "Unit": "g" },
+      { "MedicineName": "四季青", "Amount": 150, "Unit": "g" },
+      { "MedicineName": "麻黄", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "紫菀", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "前胡", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "枳壳", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "甘草", "Amount": 50, "Unit": "g" }
+    ],
+    "Recipe": "以上八味，加水煎煮二次，合并煎液，滤过，滤液浓缩至适量，加入蔗糖、防腐剂适量，混匀，滤过，加水调整总量至1000ml，即得。",
+    "Attending": "清热化痰，宣肺止咳。用于外感风热所致的咳嗽，症见发热、恶寒、胸膈满闷、咳嗽咽痛；急性支气管炎、慢性支气管炎急性发作见上述证候者。",
+    "SAP1": "本品为棕黑色的黏稠液体；味甜、微苦。",
+    "UAD": "口服，一次20~30ml，一日3~4次。",
+    "Precautions": "忌食辛辣油腻。",
+    "Specifications": "每瓶装100ml",
+    "SAP2": "密封，置阴凉处"
+  },
+  {
+    "Name": "川贝枇杷糖浆",
+    "Prescription": [
+      { "MedicineName": "川贝母", "Amount": 10, "Unit": "g" },
+      { "MedicineName": "桔梗", "Amount": 20, "Unit": "g" },
+      { "MedicineName": "枇杷叶", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "薄荷脑", "Amount": 0.2, "Unit": "g" },
+      { "MedicineName": "杏仁", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "甘草", "Amount": 20, "Unit": "g" }
+    ],
+    "Recipe": "以上六味，川贝母、杏仁、桔梗、甘草加水煎煮二次，合并煎液，滤过；枇杷叶加水煎煮二次，合并煎液，滤过，与上述滤液合并，浓缩至适量，加入蔗糖、防腐剂适量，煮沸使溶解，滤过，放冷，加入薄荷脑，混匀，加水调整总量至1000ml，即得。",
+    "Attending": "清热宣肺，化痰止咳。用于风热犯肺、痰热内阻所致的咳嗽痰黄或咯痰不爽、咽喉肿痛、胸闷胀痛；感冒、支气管炎见上述证候者。",
+    "SAP1": "本品为棕红色的黏稠液体；气香，味甜、微苦、凉。",
+    "UAD": "口服，一次10ml，一日3次。",
+    "Precautions": "忌食辛辣油腻。",
+    "Specifications": "每瓶装100ml",
+    "SAP2": "密封，置阴凉处"
+  },
+  {
+    "Name": "养阴清肺丸",
+    "Prescription": [
+      { "MedicineName": "地黄", "Amount": 180, "Unit": "g" },
+      { "MedicineName": "麦冬", "Amount": 90, "Unit": "g" },
+      { "MedicineName": "玄参", "Amount": 180, "Unit": "g" },
+      { "MedicineName": "川贝母", "Amount": 90, "Unit": "g" },
+      { "MedicineName": "白芍", "Amount": 90, "Unit": "g" },
+      { "MedicineName": "牡丹皮", "Amount": 90, "Unit": "g" },
+      { "MedicineName": "薄荷", "Amount": 45, "Unit": "g" },
+      { "MedicineName": "甘草", "Amount": 45, "Unit": "g" }
+    ],
+    "Recipe": "以上八味，粉碎成细粉，过筛，混匀。每100g粉末加炼蜜90~110g制成大蜜丸，即得。",
+    "Attending": "养阴润肺，清热利咽。用于阴虚肺燥，咽喉干痛，干咳少痰。",
+    "SAP1": "本品为棕褐色的大蜜丸；味甜、微苦。",
+    "UAD": "口服，一次1丸，一日2次。",
+    "Precautions": "忌烟、酒及辛辣、生冷、油腻食物。",
+    "Specifications": "每丸重9g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "二陈丸",
+    "Prescription": [
+      { "MedicineName": "陈皮", "Amount": 250, "Unit": "g" },
+      { "MedicineName": "半夏", "Amount": 250, "Unit": "g" },
+      { "MedicineName": "茯苓", "Amount": 150, "Unit": "g" },
+      { "MedicineName": "甘草", "Amount": 75, "Unit": "g" }
+    ],
+    "Recipe": "以上四味，粉碎成细粉，过筛，混匀。另取生姜50g，捣碎，加水适量，煎煮，滤过，用煎液泛丸，干燥，即得。",
+    "Attending": "燥湿化痰，理气和胃。用于痰湿停滞导致的咳嗽痰多，胸脘胀闷，恶心呕吐。",
+    "SAP1": "本品为灰棕色至黄棕色的水丸；气微香，味甘、微辛。",
+    "UAD": "口服，一次6~9g，一日2次。",
+    "Precautions": "忌食生冷油腻。",
+    "Specifications": "每袋装6g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "止咳橘红丸",
+    "Prescription": [
+      { "MedicineName": "化橘红", "Amount": 96, "Unit": "g" },
+      { "MedicineName": "陈皮", "Amount": 48, "Unit": "g" },
+      { "MedicineName": "半夏", "Amount": 48, "Unit": "g" },
+      { "MedicineName": "茯苓", "Amount": 48, "Unit": "g" },
+      { "MedicineName": "甘草", "Amount": 24, "Unit": "g" },
+      { "MedicineName": "桔梗", "Amount": 48, "Unit": "g" },
+      { "MedicineName": "苦杏仁", "Amount": 48, "Unit": "g" },
+      { "MedicineName": "紫苏子", "Amount": 48, "Unit": "g" },
+      { "MedicineName": "紫菀", "Amount": 48, "Unit": "g" },
+      { "MedicineName": "款冬花", "Amount": 48, "Unit": "g" },
+      { "MedicineName": "瓜蒌皮", "Amount": 48, "Unit": "g" },
+      { "MedicineName": "浙贝母", "Amount": 48, "Unit": "g" },
+      { "MedicineName": "地黄", "Amount": 48, "Unit": "g" },
+      { "MedicineName": "麦冬", "Amount": 48, "Unit": "g" }
+    ],
+    "Recipe": "以上十四味，粉碎成细粉，过筛，混匀。每100g粉末加炼蜜100~120g制成大蜜丸，即得。",
+    "Attending": "清肺润燥，止嗽化痰。用于肺热燥咳，痰多气促，口苦咽干。",
+    "SAP1": "本品为黄褐色的大蜜丸；气微香，味甜、微苦。",
+    "UAD": "口服，一次2丸，一日2次。",
+    "Precautions": "忌食辛辣油腻。",
+    "Specifications": "每丸重6g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "麻仁润肠丸",
+    "Prescription": [
+      { "MedicineName": "火麻仁", "Amount": 120, "Unit": "g" },
+      { "MedicineName": "苦杏仁", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "大黄", "Amount": 120, "Unit": "g" },
+      { "MedicineName": "木香", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "陈皮", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "白芍", "Amount": 60, "Unit": "g" }
+    ],
+    "Recipe": "以上六味，粉碎成细粉，过筛，混匀。每100g粉末加炼蜜140~160g制成大蜜丸，即得。",
+    "Attending": "润肠通便。用于肠胃积热，胸腹胀满，大便秘结。",
+    "SAP1": "本品为黄褐色的大蜜丸；气微香，味苦、微甜。",
+    "UAD": "口服，一次1~2丸，一日2次。",
+    "Precautions": "孕妇忌服。",
+    "Specifications": "每丸重6g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "槐角丸",
+    "Prescription": [
+      { "MedicineName": "槐角", "Amount": 200, "Unit": "g" },
+      { "MedicineName": "地榆", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "黄芩", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "枳壳", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "当归", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "防风", "Amount": 100, "Unit": "g" }
+    ],
+    "Recipe": "以上六味，粉碎成细粉，过筛，混匀。每100g粉末加炼蜜45~55g与适量的水泛丸，干燥，制成水蜜丸；或加炼蜜100~120g制成大蜜丸，即得。",
+    "Attending": "清肠疏风，凉血止血。用于血热所致的肠风便血、痔疮肿痛。",
+    "SAP1": "本品为黑褐色至黑色的水蜜丸或大蜜丸；味苦、涩。",
+    "UAD": "口服，水蜜丸一次6g，大蜜丸一次1丸，一日2次。",
+    "Precautions": "忌食辛辣。",
+    "Specifications": "大蜜丸每丸重9g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "补中益气丸",
+    "Prescription": [
+      { "MedicineName": "黄芪", "Amount": 200, "Unit": "g" },
+      { "MedicineName": "党参", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "甘草", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "白术", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "当归", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "升麻", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "柴胡", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "陈皮", "Amount": 60, "Unit": "g" }
+    ],
+    "Recipe": "以上八味，粉碎成细粉，过筛，混匀。每100g粉末用炼蜜35~50g与适量的水泛丸，干燥，制成水蜜丸；或加炼蜜100~120g制成大蜜丸，即得。",
+    "Attending": "补中益气，升阳举陷。用于脾胃虚弱、中气下陷所致的泄泻、脱肛、阴挺，症见体倦乏力、食少腹胀、便溏久泻、肛门下坠。",
+    "SAP1": "本品为棕色的水丸或棕褐色至黑褐色的大蜜丸；味微甜、辛。",
+    "UAD": "口服，水蜜丸一次6g，大蜜丸一次1丸，一日2~3次。",
+    "Precautions": "忌食生冷油腻。",
+    "Specifications": "大蜜丸每丸重9g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "参苓白术散",
+    "Prescription": [
+      { "MedicineName": "人参", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "茯苓", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "白术", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "山药", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "白扁豆", "Amount": 75, "Unit": "g" },
+      { "MedicineName": "莲子", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "薏苡仁", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "砂仁", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "桔梗", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "甘草", "Amount": 100, "Unit": "g" }
+    ],
+    "Recipe": "以上十味，粉碎成细粉，过筛，混匀，即得。",
+    "Attending": "补脾胃，益肺气。用于脾胃虚弱，食少便溏，气短咳嗽，肢倦乏力。",
+    "SAP1": "本品为黄色至灰黄色的粉末；气香，味甜。",
+    "UAD": "口服，一次6~9g，一日2~3次。",
+    "Precautions": "忌食生冷油腻。",
+    "Specifications": "每袋装6g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "金匮肾气丸",
+    "Prescription": [
+      { "MedicineName": "地黄", "Amount": 108, "Unit": "g" },
+      { "MedicineName": "山药", "Amount": 27, "Unit": "g" },
+      { "MedicineName": "山茱萸", "Amount": 27, "Unit": "g" },
+      { "MedicineName": "茯苓", "Amount": 78, "Unit": "g" },
+      { "MedicineName": "牡丹皮", "Amount": 27, "Unit": "g" },
+      { "MedicineName": "泽泻", "Amount": 27, "Unit": "g" },
+      { "MedicineName": "桂枝", "Amount": 27, "Unit": "g" },
+      { "MedicineName": "附子", "Amount": 27, "Unit": "g" },
+      { "MedicineName": "牛膝", "Amount": 54, "Unit": "g" },
+      { "MedicineName": "车前子", "Amount": 54, "Unit": "g" }
+    ],
+    "Recipe": "以上十味，粉碎成细粉，过筛，混匀。每100g粉末加炼蜜35~50g与适量的水泛丸，干燥，制成水蜜丸；或加炼蜜90~110g制成大蜜丸，即得。",
+    "Attending": "温补肾阳，化气行水。用于肾虚水肿，腰膝酸软，小便不利，畏寒肢冷。",
+    "SAP1": "本品为棕褐色至黑褐色的水蜜丸或大蜜丸；味酸、微甘、苦。",
+    "UAD": "口服，水蜜丸一次4~5g，大蜜丸一次1丸，一日2次。",
+    "Precautions": "孕妇忌服。",
+    "Specifications": "大蜜丸每丸重6g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "左归丸",
+    "Prescription": [
+      { "MedicineName": "熟地黄", "Amount": 200, "Unit": "g" },
+      { "MedicineName": "菟丝子", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "牛膝", "Amount": 75, "Unit": "g" },
+      { "MedicineName": "龟甲胶", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "鹿角胶", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "山药", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "山茱萸", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "枸杞子", "Amount": 100, "Unit": "g" }
+    ],
+    "Recipe": "以上八味，除龟甲胶、鹿角胶外，其余六味粉碎成细粉，过筛，混匀。取龟甲胶、鹿角胶，加适量水溶化，与上述粉末混匀，用炼蜜35~50g与适量的水泛丸，干燥，制成水蜜丸，即得。",
+    "Attending": "滋肾补阴。用于真阴不足，腰酸膝软，盗汗遗精，神疲口燥。",
+    "SAP1": "本品为黑色水蜜丸；气微腥，味酸、微甜。",
+    "UAD": "口服，一次9g，一日2次。",
+    "Precautions": "孕妇忌服。",
+    "Specifications": "每瓶装90g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "右归丸",
+    "Prescription": [
+      { "MedicineName": "熟地黄", "Amount": 240, "Unit": "g" },
+      { "MedicineName": "附子", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "肉桂", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "山药", "Amount": 120, "Unit": "g" },
+      { "MedicineName": "山茱萸", "Amount": 90, "Unit": "g" },
+      { "MedicineName": "菟丝子", "Amount": 120, "Unit": "g" },
+      { "MedicineName": "鹿角胶", "Amount": 120, "Unit": "g" },
+      { "MedicineName": "枸杞子", "Amount": 120, "Unit": "g" },
+      { "MedicineName": "当归", "Amount": 90, "Unit": "g" },
+      { "MedicineName": "杜仲", "Amount": 120, "Unit": "g" }
+    ],
+    "Recipe": "以上十味，除鹿角胶外，其余九味粉碎成细粉，过筛，混匀。取鹿角胶，加适量水溶化，与上述粉末混匀，用炼蜜35~50g与适量的水泛丸，干燥，制成水蜜丸，即得。",
+    "Attending": "温补肾阳，填精止遗。用于肾阳不足，命门火衰，腰膝酸冷，精神不振，怯寒畏冷，阳痿遗精，大便溏薄，尿频而清。",
+    "SAP1": "本品为黑色的小蜜丸或大蜜丸；味甜、微苦。",
+    "UAD": "口服，小蜜丸一次9g，大蜜丸一次1丸，一日3次。",
+    "Precautions": "孕妇忌服。",
+    "Specifications": "大蜜丸每丸重9g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "五子衍宗丸",
+    "Prescription": [
+      { "MedicineName": "枸杞子", "Amount": 400, "Unit": "g" },
+      { "MedicineName": "菟丝子", "Amount": 400, "Unit": "g" },
+      { "MedicineName": "覆盆子", "Amount": 200, "Unit": "g" },
+      { "MedicineName": "五味子", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "车前子", "Amount": 100, "Unit": "g" }
+    ],
+    "Recipe": "以上五味，粉碎成细粉，过筛，混匀。每100g粉末用炼蜜35~50g与适量的水泛丸，干燥，制成水蜜丸；或加炼蜜80~100g制成大蜜丸，即得。",
+    "Attending": "补肾益精。用于肾虚精亏所致的阳痿不育、遗精早泄、腰痛、尿后余沥。",
+    "SAP1": "本品为棕褐色的水蜜丸或黑褐色的大蜜丸；味甜、酸、微苦。",
+    "UAD": "口服，水蜜丸一次6g，大蜜丸一次1丸，一日2次。",
+    "Precautions": "忌食辛辣。",
+    "Specifications": "大蜜丸每丸重9g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "安神补心丸",
+    "Prescription": [
+      { "MedicineName": "丹参", "Amount": 300, "Unit": "g" },
+      { "MedicineName": "五味子", "Amount": 150, "Unit": "g" },
+      { "MedicineName": "石菖蒲", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "安神膏", "Amount": 560, "Unit": "g" }
+    ],
+    "Recipe": "以上四味，取丹参、五味子、石菖蒲粉碎成细粉，过筛，混匀；取安神膏与上述粉末混匀，制成浓缩丸，干燥，包糖衣，即得。",
+    "Attending": "养心安神。用于心悸失眠，头晕耳鸣。",
+    "SAP1": "本品为糖衣浓缩丸，除去糖衣后显棕褐色；味涩、微酸。",
+    "UAD": "口服，一次15丸，一日3次。",
+    "Precautions": "忌烟、酒及辛辣、油腻食物。",
+    "Specifications": "每15丸重2g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "柏子养心丸",
+    "Prescription": [
+      { "MedicineName": "柏子仁", "Amount": 25, "Unit": "g" },
+      { "MedicineName": "党参", "Amount": 25, "Unit": "g" },
+      { "MedicineName": "黄芪", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "川芎", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "当归", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "茯苓", "Amount": 200, "Unit": "g" },
+      { "MedicineName": "远志", "Amount": 25, "Unit": "g" },
+      { "MedicineName": "酸枣仁", "Amount": 25, "Unit": "g" },
+      { "MedicineName": "肉桂", "Amount": 25, "Unit": "g" },
+      { "MedicineName": "五味子", "Amount": 25, "Unit": "g" },
+      { "MedicineName": "半夏曲", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "甘草", "Amount": 10, "Unit": "g" },
+      { "MedicineName": "朱砂", "Amount": 30, "Unit": "g" }
+    ],
+    "Recipe": "以上十三味，朱砂水飞成极细粉；其余柏子仁等十二味粉碎成细粉，与上述粉末配研，过筛，混匀。每100g粉末加炼蜜30~40g与适量的水泛丸，干燥，制成水蜜丸；或加炼蜜50~70g制成小蜜丸或大蜜丸，即得。",
+    "Attending": "补气，养血，安神。用于心气虚寒，心悸易惊，失眠多梦，健忘。",
+    "SAP1": "本品为棕色的水蜜丸、棕褐色的小蜜丸或大蜜丸；味先甜后苦、微麻。",
+    "UAD": "口服，水蜜丸一次6g，小蜜丸一次9g，大蜜丸一次1丸，一日2次。",
+    "Precautions": "不宜久服。",
+    "Specifications": "大蜜丸每丸重9g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "朱砂安神丸",
+    "Prescription": [
+      { "MedicineName": "朱砂", "Amount": 200, "Unit": "g" },
+      { "MedicineName": "黄连", "Amount": 300, "Unit": "g" },
+      { "MedicineName": "地黄", "Amount": 200, "Unit": "g" },
+      { "MedicineName": "当归", "Amount": 200, "Unit": "g" },
+      { "MedicineName": "甘草", "Amount": 100, "Unit": "g" }
+    ],
+    "Recipe": "以上五味，朱砂水飞成极细粉；其余黄连等四味粉碎成细粉，与上述粉末配研，过筛，混匀。每100g粉末加炼蜜35~45g与适量的水泛丸，干燥，制成水蜜丸；或加炼蜜90~110g制成大蜜丸，即得。",
+    "Attending": "清心养血，镇惊安神。用于胸中烦热，心悸不宁，失眠多梦。",
+    "SAP1": "本品为红棕色至棕色的水蜜丸或大蜜丸；味苦、微甜。",
+    "UAD": "口服，水蜜丸一次6g，大蜜丸一次1丸，一日1~2次。",
+    "Precautions": "不宜久服。",
+    "Specifications": "大蜜丸每丸重9g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "血府逐瘀丸",
+    "Prescription": [
+      { "MedicineName": "柴胡", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "当归", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "地黄", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "赤芍", "Amount": 75, "Unit": "g" },
+      { "MedicineName": "红花", "Amount": 75, "Unit": "g" },
+      { "MedicineName": "桃仁", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "枳壳", "Amount": 75, "Unit": "g" },
+      { "MedicineName": "甘草", "Amount": 25, "Unit": "g" },
+      { "MedicineName": "川芎", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "牛膝", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "桔梗", "Amount": 50, "Unit": "g" }
+    ],
+    "Recipe": "以上十一味，粉碎成细粉，过筛，混匀。每100g粉末加炼蜜110~130g制成大蜜丸，即得。",
+    "Attending": "活血祛瘀，行气止痛。用于瘀血内阻，头痛或胸痛，内热瞀闷，失眠多梦，心悸怔忡，急躁善怒。",
+    "SAP1": "本品为棕黑色的大蜜丸；气微香，味甜、微苦。",
+    "UAD": "口服，一次1~2丸，一日2次。",
+    "Precautions": "孕妇忌服。",
+    "Specifications": "每丸重9g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "舒肝丸",
+    "Prescription": [
+      { "MedicineName": "川楝子", "Amount": 150, "Unit": "g" },
+      { "MedicineName": "延胡索", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "白芍", "Amount": 120, "Unit": "g" },
+      { "MedicineName": "片姜黄", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "木香", "Amount": 80, "Unit": "g" },
+      { "MedicineName": "沉香", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "枳壳", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "豆蔻仁", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "茯苓", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "厚朴", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "陈皮", "Amount": 80, "Unit": "g" },
+      { "MedicineName": "砂仁", "Amount": 80, "Unit": "g" },
+      { "MedicineName": "朱砂", "Amount": 20, "Unit": "g" }
+    ],
+    "Recipe": "以上十三味，朱砂水飞成极细粉；其余川楝子等十二味粉碎成细粉，与上述粉末配研，过筛，混匀。每100g粉末加炼蜜170~180g制成大蜜丸，即得。",
+    "Attending": "舒肝和胃，理气止痛。用于肝郁气滞，胸胁胀满，胃脘疼痛，嘈杂呕吐，嗳气泛酸。",
+    "SAP1": "本品为棕黑色的大蜜丸；气微香，味甜、苦、辛。",
+    "UAD": "口服，一次1丸，一日2~3次。",
+    "Precautions": "孕妇慎用。",
+    "Specifications": "每丸重6g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "元胡止痛片",
+    "Prescription": [
+      { "MedicineName": "延胡索", "Amount": 445, "Unit": "g" },
+      { "MedicineName": "白芷", "Amount": 223, "Unit": "g" }
+    ],
+    "Recipe": "以上二味，取白芷166g，粉碎成细粉；剩余白芷与延胡索粉碎成粗粉，用80%乙醇回流提取三次，合并提取液，滤过，滤液回收乙醇，浓缩成稠膏，加入上述细粉及辅料适量，混匀，制成颗粒，压片，包糖衣或薄膜衣，即得。",
+    "Attending": "理气，活血，止痛。用于气滞血瘀所致的胃痛、胁痛、头痛及痛经。",
+    "SAP1": "本品为糖衣片或薄膜衣片，除去包衣后显棕褐色；气香，味苦。",
+    "UAD": "口服，一次4~6片，一日3次。",
+    "Precautions": "忌食生冷油腻。",
+    "Specifications": "每片重0.3g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "三七伤药片",
+    "Prescription": [
+      { "MedicineName": "三七", "Amount": 52.5, "Unit": "g" },
+      { "MedicineName": "草乌", "Amount": 52.5, "Unit": "g" },
+      { "MedicineName": "雪上一枝蒿", "Amount": 23, "Unit": "g" },
+      { "MedicineName": "冰片", "Amount": 1.05, "Unit": "g" },
+      { "MedicineName": "骨碎补", "Amount": 492.2, "Unit": "g" },
+      { "MedicineName": "红花", "Amount": 157.5, "Unit": "g" },
+      { "MedicineName": "接骨木", "Amount": 315, "Unit": "g" },
+      { "MedicineName": "赤芍", "Amount": 87.5, "Unit": "g" }
+    ],
+    "Recipe": "以上八味，草乌、雪上一枝蒿粉碎成细粉；三七、骨碎补、红花、接骨木、赤芍加水煎煮二次，合并煎液，滤过，滤液浓缩至适量，加入草乌等细粉，混匀，干燥，粉碎成细粉，加入冰片，混匀，制成颗粒，压片，包糖衣，即得。",
+    "Attending": "舒筋活血，散瘀止痛。用于跌打损伤，风湿瘀阻，关节痹痛；急慢性扭挫伤、神经痛见上述证候者。",
+    "SAP1": "本品为糖衣片，除去糖衣后显棕褐色；味微苦。",
+    "UAD": "口服，一次3片，一日3次；或遵医嘱。",
+    "Precautions": "孕妇忌用。",
+    "Specifications": "每片重0.3g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "云南白药",
+    "Prescription": [
+      { "MedicineName": "三七", "Amount": 0, "Unit": "" },
+      { "MedicineName": "重楼", "Amount": 0, "Unit": "" },
+      { "MedicineName": "麝香", "Amount": 0, "Unit": "" },
+      { "MedicineName": "草乌", "Amount": 0, "Unit": "" }
+    ],
+    "Recipe": "以上数味，经加工制成。",
+    "Attending": "化瘀止血，活血止痛，解毒消肿。用于跌打损伤，瘀血肿痛，吐血、咳血、便血、痔血、崩漏下血，疮疡肿毒及软组织挫伤，闭合性骨折，支气管扩张及肺结核咳血，溃疡病出血，以及皮肤感染性疾病。",
+    "SAP1": "本品为灰黄色至浅棕黄色的粉末；具特异香气，味略清凉，并有麻舌感。",
+    "UAD": "口服，一次0.25~0.5g，一日4次。跌打损伤者，取本品适量，用酒调敷患处。",
+    "Precautions": "孕妇忌用。",
+    "Specifications": "每瓶装4g",
+    "SAP2": "密封，置阴凉干燥处"
+  },
+  {
+    "Name": "六神丸",
+    "Prescription": [
+      { "MedicineName": "麝香", "Amount": 3, "Unit": "g" },
+      { "MedicineName": "牛黄", "Amount": 3, "Unit": "g" },
+      { "MedicineName": "珍珠", "Amount": 3, "Unit": "g" },
+      { "MedicineName": "雄黄", "Amount": 3, "Unit": "g" },
+      { "MedicineName": "蟾酥", "Amount": 3, "Unit": "g" },
+      { "MedicineName": "冰片", "Amount": 3, "Unit": "g" }
+    ],
+    "Recipe": "以上六味，分别研成极细粉，配研，过筛，混匀，用水泛丸，干燥，即得。",
+    "Attending": "清凉解毒，消炎止痛。用于烂喉丹痧，咽喉肿痛，喉风喉痈，单双乳蛾，小儿热疖，痈疡疔疮，乳痈发背，无名肿毒。",
+    "SAP1": "本品为黑色有光泽的小水丸；味辛辣、麻舌、苦。",
+    "UAD": "口服，一次5~10丸，一日2~3次。外用，取数丸，用凉开水化开，涂于患处。",
+    "Precautions": "孕妇忌服。",
+    "Specifications": "每1000粒重3.125g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "复方丹参片",
+    "Prescription": [
+      { "MedicineName": "丹参", "Amount": 450, "Unit": "g" },
+      { "MedicineName": "三七", "Amount": 141, "Unit": "g" },
+      { "MedicineName": "冰片", "Amount": 8, "Unit": "g" }
+    ],
+    "Recipe": "以上三味，丹参提取三次，第一次加乙醇回流提取1.5小时，滤过，滤液回收乙醇，浓缩至适量；第二、三次加水煎煮，滤过，合并滤液，浓缩至适量，与上述浓缩液合并，减压干燥，粉碎成细粉；三七粉碎成细粉；冰片研细，与上述粉末配研，过筛，混匀，制成颗粒，压片，包糖衣或薄膜衣，即得。",
+    "Attending": "活血化瘀，理气止痛。用于气滞血瘀所致的胸痹，症见胸闷、心前区刺痛；冠心病心绞痛见上述证候者。",
+    "SAP1": "本品为糖衣片或薄膜衣片，除去包衣后显棕褐色；气芳香，味微苦。",
+    "UAD": "口服，一次3片，一日3次。",
+    "Precautions": "孕妇慎用。",
+    "Specifications": "每片重0.25g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "速效救心丸",
+    "Prescription": [
+      { "MedicineName": "川芎", "Amount": 0, "Unit": "" },
+      { "MedicineName": "冰片", "Amount": 0, "Unit": "" }
+    ],
+    "Recipe": "以上二味，经加工制成。",
+    "Attending": "行气活血，祛瘀止痛，增加冠脉血流量，缓解心绞痛。用于气滞血瘀型冠心病，心绞痛。",
+    "SAP1": "本品为棕黄色的滴丸；气凉，味微苦。",
+    "UAD": "口服，一次4~6粒，一日3次；急性发作时，一次10~15粒。",
+    "Precautions": "孕妇禁用。",
+    "Specifications": "每粒重40mg",
+    "SAP2": "密封，置阴凉干燥处"
+  },
+  {
+    "Name": "麝香保心丸",
+    "Prescription": [
+      { "MedicineName": "麝香", "Amount": 0, "Unit": "" },
+      { "MedicineName": "人参", "Amount": 0, "Unit": "" },
+      { "MedicineName": "牛黄", "Amount": 0, "Unit": "" },
+      { "MedicineName": "肉桂", "Amount": 0, "Unit": "" },
+      { "MedicineName": "苏合香", "Amount": 0, "Unit": "" },
+      { "MedicineName": "蟾酥", "Amount": 0, "Unit": "" },
+      { "MedicineName": "冰片", "Amount": 0, "Unit": "" }
+    ],
+    "Recipe": "以上七味，经加工制成。",
+    "Attending": "芳香温通，益气强心。用于气滞血瘀所致的胸痹，症见心前区疼痛、固定不移；心肌缺血所致的心绞痛、心肌梗死见上述证候者。",
+    "SAP1": "本品为黑褐色有光泽的水丸；破碎后断面为棕黄色；味苦、辛凉，有麻舌感。",
+    "UAD": "口服，一次1~2丸，一日3次；或症状发作时服用。",
+    "Precautions": "孕妇禁用。",
+    "Specifications": "每丸重22.5mg",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "华佗再造丸",
+    "Prescription": [
+      { "MedicineName": "川芎", "Amount": 0, "Unit": "" },
+      { "MedicineName": "吴茱萸", "Amount": 0, "Unit": "" },
+      { "MedicineName": "冰片", "Amount": 0, "Unit": "" },
+      { "MedicineName": "马钱子", "Amount": 0, "Unit": "" }
+    ],
+    "Recipe": "以上数味，经加工制成。",
+    "Attending": "活血化瘀，化痰通络，行气止痛。用于痰瘀阻络之中风恢复期和后遗症，症见半身不遂、拘挛麻木、口眼歪斜、言语不清。",
+    "SAP1": "本品为黑色的浓缩水蜜丸；气香，味苦、辛。",
+    "UAD": "口服，一次4~8g，一日2~3次；重症一次8~16g，或遵医嘱。",
+    "Precautions": "孕妇忌服。",
+    "Specifications": "每瓶装80g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "大活络丸",
+    "Prescription": [
+      { "MedicineName": "蕲蛇", "Amount": 0, "Unit": "" },
+      { "MedicineName": "乌梢蛇", "Amount": 0, "Unit": "" },
+      { "MedicineName": "威灵仙", "Amount": 0, "Unit": "" },
+      { "MedicineName": "天麻", "Amount": 0, "Unit": "" },
+      { "MedicineName": "全蝎", "Amount": 0, "Unit": "" },
+      { "MedicineName": "僵蚕", "Amount": 0, "Unit": "" },
+      { "MedicineName": "麝香", "Amount": 0, "Unit": "" },
+      { "MedicineName": "牛黄", "Amount": 0, "Unit": "" }
+    ],
+    "Recipe": "以上数味，经加工制成。",
+    "Attending": "祛风止痛，除湿豁痰，舒筋活络。用于中风痰厥引起的瘫痪，足萎痹痛，筋脉拘急，腰腿疼痛及跌打损伤，行走不便，胸痹等症。",
+    "SAP1": "本品为棕褐色的大蜜丸；气微香，味苦。",
+    "UAD": "口服，一次1丸，一日1~2次。",
+    "Precautions": "孕妇忌服。",
+    "Specifications": "每丸重3g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "小活络丸",
+    "Prescription": [
+      { "MedicineName": "胆南星", "Amount": 180, "Unit": "g" },
+      { "MedicineName": "制川乌", "Amount": 180, "Unit": "g" },
+      { "MedicineName": "制草乌", "Amount": 180, "Unit": "g" },
+      { "MedicineName": "地龙", "Amount": 180, "Unit": "g" },
+      { "MedicineName": "乳香", "Amount": 66, "Unit": "g" },
+      { "MedicineName": "没药", "Amount": 66, "Unit": "g" }
+    ],
+    "Recipe": "以上六味，粉碎成细粉，过筛，混匀。每100g粉末加炼蜜140~160g制成大蜜丸，即得。",
+    "Attending": "祛风散寒，化痰除湿，活血止痛。用于风寒湿邪闭阻、痰瘀阻络所致的痹病，症见肢体关节疼痛，或冷痛，或刺痛，或疼痛夜甚、关节屈伸不利、麻木拘挛。",
+    "SAP1": "本品为黑褐色的大蜜丸；气腥，味苦。",
+    "UAD": "口服，一次1丸，一日2次。",
+    "Precautions": "孕妇禁用。",
+    "Specifications": "每丸重3g",
+    "SAP2": "密封"
+  },
+  {
+    "Name": "天麻丸",
+    "Prescription": [
+      { "MedicineName": "天麻", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "羌活", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "独活", "Amount": 50, "Unit": "g" },
+      { "MedicineName": "杜仲", "Amount": 70, "Unit": "g" },
+      { "MedicineName": "牛膝", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "粉萆薢", "Amount": 60, "Unit": "g" },
+      { "MedicineName": "附子", "Amount": 10, "Unit": "g" },
+      { "MedicineName": "当归", "Amount": 100, "Unit": "g" },
+      { "MedicineName": "地黄", "Amount": 160, "Unit": "g" },
+      { "MedicineName": "玄参", "Amount": 60, "Unit": "g" }
+    ],
+    "Recipe": "以上十味，粉碎成细粉，过筛，混匀。每100g粉末加炼蜜50~60g与适量的水泛丸，干燥，制成水蜜丸；或加炼蜜100~120g制成大蜜丸，即得。",
+    "Attending": "祛风除湿，通络止痛，补益肝肾。用于风湿瘀阻、肝肾不足所致的痹病，症见肢体拘挛、手足麻木、腰腿酸痛。",
+    "SAP1": "本品为黑褐色的水蜜丸或黑色的大蜜丸；气微香，味微甜、略苦麻。",
+    "UAD": "口服，水蜜丸一次6g，大蜜丸一次1丸，一日2~3次。",
+    "Precautions": "孕妇慎用。",
+    "Specifications": "大蜜丸每丸重9g",
+    "SAP2": "密封"
+  }
+]

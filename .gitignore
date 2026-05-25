@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Environment files (keep .env.example, ignore .env)
+.env
+!.env.example
+
+# Database
+*.sqlite
+*.sqlite3
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+!.vscode/extensions.json
+.idea/
+
+# Build output
+dist/
+dist-ssr/
+
+# Uploads (local test files)
+uploads/
+
+# Zip archives
+*.zip

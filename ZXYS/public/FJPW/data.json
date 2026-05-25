@@ -1,0 +1,148 @@
+{
+  "herbs": [
+    {
+      "name": "人参",
+      "nature": "微温",
+      "category": "补气类",
+      "properties": "大补元气，复脉固脱",
+      "flavor": "甘、微苦",
+      "meridian": "脾、肺、心"
+    },
+    {
+      "name": "黄芪",
+      "nature": "微温",
+      "category": "补气类",
+      "properties": "补气升阳，益卫固表",
+      "flavor": "甘",
+      "meridian": "脾、肺"
+    },
+    {
+      "name": "党参",
+      "nature": "平",
+      "category": "补气类",
+      "properties": "健脾益肺，养血生津",
+      "flavor": "甘",
+      "meridian": "脾、肺"
+    },
+    {
+      "name": "白术",
+      "nature": "温",
+      "category": "补气类",
+      "properties": "健脾益气，燥湿利水",
+      "flavor": "甘、苦",
+      "meridian": "脾、胃"
+    },
+    {
+      "name": "甘草",
+      "nature": "平",
+      "category": "补气类",
+      "properties": "补脾益气，调和诸药",
+      "flavor": "甘",
+      "meridian": "心、肺、脾、胃"
+    },
+    {
+      "name": "当归",
+      "nature": "温",
+      "category": "补血类",
+      "properties": "补血活血，调经止痛",
+      "flavor": "甘、辛",
+      "meridian": "肝、心、脾"
+    },
+    {
+      "name": "熟地黄",
+      "nature": "微温",
+      "category": "补血类",
+      "properties": "滋阴补血，益精填髓",
+      "flavor": "甘",
+      "meridian": "肝、肾"
+    },
+    {
+      "name": "川芎",
+      "nature": "温",
+      "category": "活血类",
+      "properties": "活血行气，祛风止痛",
+      "flavor": "辛",
+      "meridian": "肝、胆、心包"
+    },
+    {
+      "name": "赤芍",
+      "nature": "微寒",
+      "category": "活血类",
+      "properties": "清热凉血，散瘀止痛",
+      "flavor": "苦",
+      "meridian": "肝"
+    },
+    {
+      "name": "附子",
+      "nature": "大热",
+      "category": "温里类",
+      "properties": "回阳救逆，补火助阳",
+      "flavor": "辛、甘",
+      "meridian": "心、肾、脾"
+    },
+    {
+      "name": "干姜",
+      "nature": "热",
+      "category": "温里类",
+      "properties": "温中散寒，回阳通脉",
+      "flavor": "辛",
+      "meridian": "脾、胃、心、肺"
+    },
+    {
+      "name": "半夏",
+      "nature": "温",
+      "category": "化痰类",
+      "properties": "燥湿化痰，降逆止呕",
+      "flavor": "辛",
+      "meridian": "脾、胃、肺"
+    },
+    {
+      "name": "陈皮",
+      "nature": "温",
+      "category": "理气类",
+      "properties": "理气健脾，燥湿化痰",
+      "flavor": "辛、苦",
+      "meridian": "脾、肺"
+    },
+    {
+      "name": "厚朴",
+      "nature": "温",
+      "category": "理气类",
+      "properties": "燥湿消痰，下气除满",
+      "flavor": "苦、辛",
+      "meridian": "脾、胃、肺、大肠"
+    },
+    {
+      "name": "金银花",
+      "nature": "寒",
+      "category": "清热类",
+      "properties": "清热解毒，疏散风热",
+      "flavor": "甘",
+      "meridian": "肺、心、胃"
+    },
+    {
+      "name": "连翘",
+      "nature": "微寒",
+      "category": "清热类",
+      "properties": "清热解毒，消肿散结",
+      "flavor": "苦",
+      "meridian": "肺、心、小肠"
+    },
+    {
+      "name": "板蓝根",
+      "nature": "寒",
+      "category": "清热类",
+      "properties": "清热解毒，凉血利咽",
+      "flavor": "苦",
+      "meridian": "心、胃"
+    },
+    {
+      "name": "甘遂",
+      "nature": "寒",
+      "category": "泻下类",
+      "properties": "泻水逐饮，消肿散结",
+      "flavor": "苦",
+      "meridian": "肺、肾、大肠"
+    }
+  ]
+}
