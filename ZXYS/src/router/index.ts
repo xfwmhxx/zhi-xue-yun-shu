@@ -42,6 +42,8 @@ import ResumeSection from '@/views/UserHome/ResumeSection.vue'
 import Test from '@/views/test.vue'
 import Manager from '@/views/Manager.vue'
 
+import UnityLab001 from '@/views/UnityLab001.vue'
+import UnityLab003 from '@/views/UnityLab003.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -233,7 +235,23 @@ const router = createRouter({
         },
       ],
     },
+    {
+      path: '/Unity',
+      name: 'Unity',
+      children: [
+        {
+          path: 'Lab001',
+          name: 'UnityLab001',
+          component: UnityLab001,
+        },
 
+        {
+          path: 'Lab003',
+          name: 'UnityLab003',
+          component: UnityLab003,
+        },
+      ],
+    },
     {
       path: '/test',
       name: 'TEST',

@@ -162,7 +162,8 @@ const router = useRouter()
 
 // 定义实验室路由映射表
 const labRoutes: Record<string, string> = {
-  // Unity 实验室由团队成员 hc 贡献
+  'acupoint-3d': '/Unity/Lab001',
+  'meridian-vr': '/Unity/Lab003',
 }
 
 const features = [
@@ -207,8 +208,28 @@ const technologies = [
 ]
 
 const labs = [
-  // Unity 实验室由团队成员 hc 贡献
-  // 敬请期待更多实验室内容...
+  {
+    id: 'acupoint-3d',
+    title: '3D人体穴位实验室',
+    description: '探索人体经络奥秘，3D模型互动标注穴位，支持VR模式',
+    icon: 'fas fa-cube',
+    status: 'active',
+    statusText: '体验中',
+    tags: ['VR支持', '3D互动', '穴位标注'],
+    progress: 65,
+    progressText: '开发进度 65% · 基础功能已完成',
+  },
+  {
+    id: 'meridian-vr',
+    title: '3D草药实验室',
+    description: '在3D空间中探索草药形态与特性，支持多角度观察。',
+    icon: 'fas fa-water',
+    status: 'active',
+    statusText: '体验中',
+    tags: ['3D互动', '模拟'],
+    progress: 15,
+    progressText: '开发进度 55% · 基础功能已完成',
+  },
 ]
 
 const scrollToLabs = () => {

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>药材3D展示 - Unity WebGL</title>
+<style>
+/* ---------- 全局 ---------- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei", "PingFang SC", "STKaiti", serif;
+    overflow: hidden;
+    background: linear-gradient(135deg, #fffaf3 0%, #fdf4e8 45%, #f8efe3 100%);
+    color: #4b2e2e;
+}
+
+/* ---------- 左侧 Unity 画布 ---------- */
+#unity-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 75%;
+    height: 100%;
+    padding: 18px;
+    box-sizing: border-box;
+}
+#unity-stage {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #fffdf8 0%, #fdf5e8 100%);
+    border-radius: 18px;
+    box-shadow:
+        inset 0 0 16px rgba(0,0,0,0.04),
+        0 10px 30px rgba(108, 73, 42, 0.08);
+    border: 1px solid rgba(178, 135, 90, 0.18);
+    position: relative;
+    overflow: hidden;
+}
+#unity-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: transparent;
+}
+
+/* ---------- 右侧信息面板 ---------- */
+#info-panel {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 25%;
+    height: 100%;
+    background: rgba(255, 249, 241, 0.92);
+    backdrop-filter: blur(14px);
+    box-shadow: -8px 0 28px rgba(75, 46, 46, 0.16);
+    border-left: 2px solid rgba(178, 135, 90, 0.45);
+    padding: 24px 18px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+/* ---------- 标题 ---------- */
+h1 {
+    margin: 0 0 8px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #9c5b2e;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.subtitle {
+    text-align: center;
+    font-size: 13px;
+    color: #7f5a44;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(169, 113, 66, 0.35);
+}
+
+/* ---------- 药材标题 ---------- */
+.herb-name {
+    font-family: "STKaiti", "KaiTi", serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 14px;
+    color: #a12222;
+    letter-spacing: 2px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+
+/* ---------- 信息卡片 ---------- */
+.herb-desc {
+    background: rgba(255, 246, 232, 0.78);
+    border: 1px solid rgba(178, 135, 90, 0.45);
+    border-radius: 14px;
+    padding: 14px 14px 10px;
+    margin-bottom: 18px;
+    box-shadow:
+        inset 0 1px 3px rgba(255,255,255,0.45),
+        0 6px 14px rgba(121, 84, 54, 0.06);
+}
+.info-item {
+    margin-bottom: 10px;
+    line-height: 1.7;
+    font-size: 14px;
+}
+.info-label {
+    display: inline-block;
+    min-width: 48px;
+    color: #8f4f2b;
+    font-weight: 700;
+}
+.info-text {
+    color: #4b2e2e;
+}
+
+/* ---------- 按钮 ---------- */
+.button-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+.herb-btn {
+    background: linear-gradient(135deg, #fffaf4 0%, #f8e2be 100%);
+    border: 1.5px solid #bb8a5d;
+    color: #4b2e2e;
+    padding: 8px 10px;
+    font-size: 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(75,46,46,0.10);
+    transition: all 0.22s ease;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+.herb-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(75,46,46,0.16);
+    background: linear-gradient(135deg, #fbe8c8 0%, #fffaf4 100%);
+}
+.herb-btn:active {
+    transform: translateY(0);
+}
+.herb-btn.active {
+    background: linear-gradient(135deg, #c98a52 0%, #b56d3f 100%);
+    color: #fffdf8;
+    border-color: #a96539;
+    box-shadow: 0 6px 14px rgba(169, 101, 57, 0.22);
+}
+
+/* ---------- 提示 ---------- */
+.instruction {
+    margin-top: 8px;
+    padding: 12px;
+    font-size: 12px;
+    line-height: 1.7;
+    color: #5a3b30;
+    background: rgba(255,246,230,0.58);
+    border: 1px solid rgba(178, 135, 90, 0.35);
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* ---------- 加载进度条 ---------- */
+#unity-loading-bar {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    text-align: center;
+    color: #5b3c30;
+    font-weight: bold;
+    z-index: 20;
+    font-size: 14px;
+}
+.loading-text {
+    letter-spacing: 1px;
+}
+#unity-progress-bar-empty {
+    width: 100%;
+    height: 12px;
+    background: rgba(255,246,230,0.85);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-top: 12px;
+    border: 1px solid rgba(178, 135, 90, 0.45);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.04);
+}
+#unity-progress-bar-full {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #b85b3a 0%, #b22222 100%);
+    transition: width 0.25s ease;
+    border-radius: 999px;
+    animation: glow 1.4s infinite alternate;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 6px rgba(178,34,34,0.35); }
+    100% { box-shadow: 0 0 14px rgba(178,34,34,0.75); }
+}
+
+/* ---------- 滚动条 ---------- */
+#info-panel::-webkit-scrollbar {
+    width: 6px;
+}
+#info-panel::-webkit-scrollbar-thumb {
+    background-color: rgba(178, 90, 56, 0.28);
+    border-radius: 999px;
+}
+#info-panel::-webkit-scrollbar-track {
+    background: rgba(255,248,238,0.35);
+}
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 1100px) {
+    #unity-container {
+        width: 70%;
+    }
+    #info-panel {
+        width: 30%;
+    }
+}
+@media (max-width: 860px) {
+    body {
+        overflow: auto;
+    }
+    #unity-container,
+    #info-panel {
+        position: static;
+        width: 100%;
+        height: auto;
+    }
+    #unity-container {
+        padding: 14px 14px 0;
+    }
+    #unity-stage {
+        height: 55vh;
+        min-height: 360px;
+    }
+    #info-panel {
+        border-left: none;
+        border-top: 2px solid rgba(178, 135, 90, 0.45);
+        border-radius: 18px 18px 0 0;
+        box-shadow: 0 -6px 24px rgba(75,46,46,0.08);
+    }
+}
+</style>
+</head>
+<body>
+<div id="info-panel">
+    <h1>药材3D展示</h1>
+    <div class="subtitle">鼠标拖拽旋转 | 滚轮缩放</div>
+
+    <div class="herb-name" id="herbName">加载中...</div>
+    <div class="herb-desc" id="herbDesc"></div>
+
+    <div class="button-group" id="buttonGroup"></div>
+
+    <div class="instruction">
+        点击按钮可切换药材模型<br>
+        鼠标左键拖拽旋转视角<br>
+        滚动滚轮可缩放模型
+    </div>
+</div>
+
+<div id="unity-container">
+    <div id="unity-stage">
+        <div id="unity-loading-bar">
+            <div class="loading-text">加载中...</div>
+            <div id="unity-progress-bar-empty">
+                <div id="unity-progress-bar-full"></div>
+            </div>
+        </div>
+        <canvas id="unity-canvas"></canvas>
+    </div>
+</div>
+
+<script>
+// 药材信息
+const herbs = [
+    {
+        name: "三七",
+        desc: "为五加科植物三七的根，具有活血止血、消肿定痛之功。",
+        taste: "甘、微苦，温",
+        meridian: "归肝、胃经",
+        functions: "活血化瘀，止血止痛",
+        indications: "跌打损伤，瘀血肿痛，吐血咯血，外伤出血"
+    },
+    {
+        name: "灵芝",
+        desc: "为多孔菌科真菌灵芝的子实体，具有补气安神、止咳平喘作用。",
+        taste: "甘，平",
+        meridian: "归心、肺、肝、肾经",
+        functions: "补气安神，止咳平喘",
+        indications: "虚劳体弱，失眠心悸，咳嗽气喘"
+    },
+    {
+        name: "人参",
+        desc: "大补元气，复脉固脱，补脾益肺，生津养血，安神益智。",
+        taste: "甘、微苦，微温",
+        meridian: "归肺、脾、心经",
+        functions: "大补元气，补脾益肺，生津安神",
+        indications: "气虚欲脱，乏力食少，心悸失眠"
+    },
+    {
+        name: "虫草",
+        desc: "即冬虫夏草，为虫草菌寄生在蝙蝠蛾幼虫上的复合体。",
+        taste: "甘，温",
+        meridian: "归肺、肾经",
+        functions: "补肾益肺，止血化痰",
+        indications: "肾虚精亏，久咳虚喘，劳嗽咯血"
+    }
+];
+
+const buttonGroup = document.getElementById('buttonGroup');
+const herbNameEl = document.getElementById('herbName');
+const herbDescEl = document.getElementById('herbDesc');
+
+function renderHerbInfo(herb) {
+    herbNameEl.textContent = herb.name;
+    herbDescEl.innerHTML = `
+        <div class="info-item"><span class="info-label">简介</span><span class="info-text">${herb.desc}</span></div>
+        <div class="info-item"><span class="info-label">性味</span><span class="info-text">${herb.taste}</span></div>
+        <div class="info-item"><span class="info-label">归经</span><span class="info-text">${herb.meridian}</span></div>
+        <div class="info-item"><span class="info-label">功能</span><span class="info-text">${herb.functions}</span></div>
+        <div class="info-item"><span class="info-label">主治</span><span class="info-text">${herb.indications}</span></div>
+    `;
+}
+
+function setActiveButton(activeIndex) {
+    const buttons = document.querySelectorAll('.herb-btn');
+    buttons.forEach((btn, index) => {
+        btn.classList.toggle('active', index === activeIndex);
+    });
+}
+
+function switchHerb(index) {
+    const herb = herbs[index];
+    renderHerbInfo(herb);
+    setActiveButton(index);
+
+    if (window.unityInstance) {
+        window.unityInstance.SendMessage('ModelContainer', 'OnJSRequest', index.toString());
+    }
+}
+
+// 初始化按钮
+herbs.forEach((herb, index) => {
+    const btn = document.createElement('button');
+    btn.className = 'herb-btn';
+    btn.textContent = herb.name;
+    btn.onclick = () => switchHerb(index);
+    buttonGroup.appendChild(btn);
+});
+
+// 默认显示第一个药材
+switchHerb(0);
+</script>
+
+<script>
+var canvas = document.querySelector("#unity-canvas");
+var loadingBar = document.querySelector("#unity-loading-bar");
+var progressBarFull = document.querySelector("#unity-progress-bar-full");
+var buildUrl = "Build";
+var loaderUrl = buildUrl + "/text.loader.js";
+
+var config = {
+    dataUrl: buildUrl + "/text.data",
+    frameworkUrl: buildUrl + "/text.framework.js",
+    codeUrl: buildUrl + "/text.wasm",
+    streamingAssetsUrl: "StreamingAssets",
+    companyName: "DefaultCompany",
+    productName: "HerbDisplay",
+    productVersion: "1.0",
+    showBanner: false,
+};
+
+var script = document.createElement("script");
+script.src = loaderUrl;
+
+script.onload = () => {
+    createUnityInstance(canvas, config, (progress) => {
+        progressBarFull.style.width = (100 * progress) + "%";
+    }).then((unityInstance) => {
+        window.unityInstance = unityInstance;
+        loadingBar.style.display = "none";
+        setTimeout(() => {
+            unityInstance.SendMessage('ModelContainer', 'OnJSRequest', "0");
+        }, 500);
+    }).catch((message) => {
+        console.error("Unity 加载失败:", message);
+        loadingBar.innerHTML = "<div style='color:#b22222;'>加载失败，请刷新页面重试</div>";
+    });
+};
+
+script.onerror = () => {
+    console.error("无法加载 loader.js，请检查路径");
+    loadingBar.innerHTML = "<div style='color:#b22222;'>无法加载 Unity 文件，请检查 Build 文件夹是否存在</div>";
+};
+
+document.body.appendChild(script);
+</script>
+</body>
+</html>

@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MediaPipe 手势控制 Unity - 杏林主题 (鼠标替代模式)</title>
+<script src="./mediapipe/hands.js"></script>
+<script src="./mediapipe/drawing_utils.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+:root {
+  --xl-bg: #fef6e4;                  /* 浅杏色主背景 */
+  --xl-glass: rgba(254,246,228,0.92);
+  --xl-glass-strong: rgba(254,246,228,0.96);
+
+  --xl-bronze: #8a5a44;              /* 古铜色 */
+  --xl-bronze-dark: #6b3e26;         /* 深古铜 */
+  --xl-bronze-light: #b08968;        /* 浅古铜 */
+
+  --xl-text: #3b2f2f;                /* 深褐色主文字 */
+  --xl-subtext: #6b5b53;             /* 次级文字 */
+
+  --xl-seal: #a63d40;                /* 印章红：少量强调 */
+  --xl-seal-dark: #8a2f32;
+
+  --xl-soft: #f3e6cf;                /* 柔和底色 */
+  --xl-soft-2: #ead7b7;
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: var(--xl-bg);
+  color: var(--xl-text);
+  overflow: hidden;
+}
+
+#unity-container {
+  position: fixed;
+  inset: 0;
+  background: var(--xl-bg);
+  z-index: 1;
+}
+
+#unity-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* 加载覆盖层 */
+#loading-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(254,246,228,0.82);
+  color: var(--xl-text);
+  font-size: 16px;
+  gap: 12px;
+  border-radius: 14px;
+  border: 3px solid var(--xl-bronze-dark);
+  backdrop-filter: blur(8px);
+}
+
+#progress-bar {
+  width: 280px;
+  height: 12px;
+  background: rgba(138,90,68,0.18);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+#progress-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--xl-bronze), var(--xl-seal));
+  transition: width 0.3s ease;
+}
+
+/* 控制面板 */
+#controls {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  width: 440px;
+  padding: 18px;
+  background: var(--xl-glass-strong);
+  border-radius: 16px;
+  border: 3px solid var(--xl-bronze-dark);
+  box-shadow: 0 10px 30px rgba(107,62,38,0.28);
+  z-index: 20;
+  color: var(--xl-text);
+  backdrop-filter: blur(6px);
+}
+
+#controls h3 {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  color: var(--xl-text);
+}
+
+.status-line {
+  font-size: 13px;
+  margin: 6px 0;
+  color: var(--xl-subtext);
+}
+
+.hint {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--xl-subtext);
+  line-height: 1.7;
+}
+
+.btn-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+button {
+  padding: 8px 14px;
+  border: 2px solid var(--xl-bronze-dark);
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--xl-text);
+  background: var(--xl-glass);
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+button:hover {
+  background: var(--xl-bronze-dark);
+  color: #fff;
+}
+
+button.primary {
+  background: var(--xl-bronze);
+  border-color: var(--xl-bronze-dark);
+  color: white;
+}
+
+button.primary:hover {
+  background: var(--xl-bronze-dark);
+}
+
+button.secondary {
+  border: 2px solid var(--xl-bronze-dark);
+  background: var(--xl-glass);
+  color: var(--xl-text);
+}
+
+.mode-selector {
+  display: flex;
+  gap: 12px;
+  margin: 12px 0 8px;
+  background: rgba(138,90,68,0.10);
+  padding: 8px 12px;
+  border-radius: 24px;
+}
+
+.mode-option {
+  flex: 1;
+  text-align: center;
+  padding: 6px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+  color: var(--xl-text);
+}
+
+.mode-option.active {
+  background: rgba(138,90,68,0.88);
+  color: #fff;
+  border-color: var(--xl-seal);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.15);
+}
+
+.mode-option:not(.active):hover {
+  background: rgba(138,90,68,0.16);
+}
+
+#message-box {
+  margin-top: 12px;
+  height: 160px;
+  overflow-y: auto;
+  border-radius: 12px;
+  background: rgba(254,246,228,0.88);
+  border: 2px solid var(--xl-bronze-dark);
+  padding: 8px;
+  font-size: 12px;
+  color: var(--xl-text);
+}
+
+#message-content > div {
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(138,90,68,0.35);
+}
+
+#message-content > div:last-child {
+  border-bottom: none;
+}
+
+/* 右侧信息区 */
+#right-sidebar {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 20;
+}
+
+/* 摄像头预览 */
+.preview-wrap {
+  position: relative;
+  right: auto;
+  bottom: auto;
+  width: 100%;
+  background: var(--xl-glass);
+  border-radius: 16px;
+  border: 3px solid var(--xl-bronze-dark);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(107,62,38,0.28);
+  z-index: 20;
+}
+
+#model-info-panel {
+  width: 100%;
+  min-height: 180px;
+  max-height: calc(100vh - 320px);
+  display: flex;
+  flex-direction: column;
+  background: var(--xl-glass-strong);
+  border-radius: 16px;
+  border: 3px solid var(--xl-bronze-dark);
+  box-shadow: 0 10px 30px rgba(107,62,38,0.20);
+  overflow: hidden;
+}
+
+#model-info-header {
+  padding: 12px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--xl-text);
+  background: rgba(243,230,207,0.9);
+  border-bottom: 2px solid var(--xl-bronze-dark);
+}
+
+#model-info-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--xl-text);
+}
+
+.model-info-empty {
+  color: var(--xl-subtext);
+}
+
+.model-info-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--xl-bronze-dark);
+}
+
+.model-info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.model-info-item {
+  background: rgba(255,255,255,0.35);
+  border: 1px solid rgba(107,62,38,0.18);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.quiz-result-correct {
+  border: 1px solid rgba(46, 125, 50, 0.35);
+  background: rgba(76, 175, 80, 0.10);
+}
+
+.quiz-result-wrong {
+  border: 1px solid rgba(198, 40, 40, 0.35);
+  background: rgba(244, 67, 54, 0.10);
+}
+
+.quiz-result-default {
+  border: 1px solid rgba(107,62,38,0.22);
+  background: rgba(243,230,207,0.55);
+}
+
+.model-info-label {
+  font-size: 12px;
+  color: var(--xl-subtext);
+  margin-bottom: 4px;
+}
+
+.model-info-value {
+  font-size: 14px;
+  color: var(--xl-text);
+  word-break: break-word;
+}
+
+.preview-inner {
+  position: relative;
+  width: 100%;
+  background: rgba(243,230,207,0.75);
+}
+
+.input_video,
+.output_canvas {
+  width: 100%;
+  display: block;
+  transform: rotateY(180deg);
+}
+
+.output_canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.preview-footer {
+  padding: 8px 10px;
+  font-size: 12px;
+  color: var(--xl-text);
+  background: rgba(254,246,228,0.92);
+  border-top: 2px solid var(--xl-bronze-dark);
+}
+
+#gesture-cursor {
+  position: fixed;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 3px solid var(--xl-seal);
+  box-shadow: 0 0 12px rgba(166,61,64,0.25);
+  background: rgba(254,246,228,0.55);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+#gesture-cursor.active {
+  display: block;
+}
+
+/* 模式提示 */
+#command-overlay {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 340px;
+  max-width: 640px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  background: var(--xl-glass-strong);
+  color: var(--xl-text);
+  border: 3px solid var(--xl-bronze-dark);
+  box-shadow: 0 10px 30px rgba(107,62,38,0.22);
+  text-align: center;
+  z-index: 30;
+  display: none;
+  pointer-events: none;
+}
+
+#command-overlay.active {
+  display: block;
+}
+
+#command-overlay-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--xl-text);
+}
+
+#command-overlay-text {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--xl-subtext);
+}
+
+.mode-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--xl-seal);
+  color: #fff;
+  font-size: 12px;
+  margin-left: 6px;
+}
+
+.mouse-tip {
+  background: var(--xl-soft);
+  border-radius: 12px;
+  padding: 8px;
+  margin-top: 8px;
+  font-size: 11px;
+  border-left: 4px solid var(--xl-seal);
+  color: var(--xl-text);
+}
+
+/* 底部功能按钮栏：更轻、更雅一点 */
+#bottom-action-bar {
+  position: fixed;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 14px;
+  padding: 10px 14px;
+  background: rgba(254,246,228,0.72);
+  border: 1.5px solid rgba(107,62,38,0.22);
+  border-radius: 999px;
+  box-shadow:
+    0 8px 24px rgba(107,62,38,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.35);
+  z-index: 25;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.bottom-action-btn {
+  min-width: 124px;
+  height: 44px;
+  padding: 0 20px;
+  border: 1.5px solid rgba(107,62,38,0.30);
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    rgba(255,250,242,0.92) 0%,
+    rgba(243,230,207,0.88) 100%
+  );
+  color: var(--xl-text);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  box-shadow:
+    0 2px 8px rgba(107,62,38,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.55);
+}
+
+.bottom-action-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(138,90,68,0.55);
+  background: linear-gradient(
+    180deg,
+    rgba(255,252,246,0.98) 0%,
+    rgba(239,223,196,0.95) 100%
+  );
+  box-shadow:
+    0 8px 18px rgba(107,62,38,0.14),
+    inset 0 1px 0 rgba(255,255,255,0.65);
+  color: var(--xl-bronze-dark);
+}
+
+.bottom-action-btn:active {
+  transform: translateY(0);
+  box-shadow:
+    0 2px 8px rgba(107,62,38,0.10),
+    inset 0 2px 4px rgba(107,62,38,0.08);
+}
+
+/* 滚动条美化 */
+#message-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+#message-box::-webkit-scrollbar-track {
+  background: rgba(138,90,68,0.10);
+  border-radius: 999px;
+}
+
+#message-box::-webkit-scrollbar-thumb {
+  background: rgba(138,90,68,0.45);
+  border-radius: 999px;
+}
+
+#message-box::-webkit-scrollbar-thumb:hover {
+  background: rgba(138,90,68,0.65);
+}
+
+/* kbd 样式 */
+kbd {
+  display: inline-block;
+  padding: 1px 6px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--xl-text);
+  background: rgba(255,255,255,0.45);
+  border: 1px solid rgba(107,62,38,0.35);
+  border-bottom-width: 2px;
+  border-radius: 6px;
+  box-shadow: inset 0 -1px 0 rgba(107,62,38,0.08);
+}
+
+/* 小屏幕适配 */
+@media (max-width: 1100px) {
+  #controls {
+    width: 380px;
+  }
+
+  #right-sidebar {
+    width: 280px;
+  }
+
+  #bottom-action-bar {
+    gap: 10px;
+    padding: 10px 12px;
+  }
+
+  .bottom-action-btn {
+    min-width: 100px;
+    padding: 9px 14px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 900px) {
+  #controls {
+    width: calc(100vw - 24px);
+    left: 12px;
+    top: 12px;
+    padding: 14px;
+  }
+
+  #right-sidebar {
+    right: 12px;
+    top: 12px;
+    width: 240px;
+  }
+
+  #model-info-panel {
+    max-height: calc(100vh - 300px);
+  }
+
+  #bottom-action-bar {
+    width: calc(100vw - 24px);
+    justify-content: center;
+    bottom: 12px;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .bottom-action-btn {
+    flex: 1;
+    min-width: 0;
+  }
+
+  #command-overlay {
+    min-width: auto;
+    width: calc(100vw - 32px);
+  }
+}
+
+@media (max-width: 640px) {
+  #controls h3 {
+    font-size: 16px;
+  }
+
+  .status-line,
+  .hint,
+  .preview-footer,
+  .mouse-tip,
+  #message-box {
+    font-size: 11px;
+  }
+
+  button,
+  .bottom-action-btn {
+    font-size: 12px;
+  }
+
+  .mode-option {
+    font-size: 12px;
+  }
+
+  #right-sidebar {
+    width: 200px;
+  }
+
+  #model-info-content {
+    padding: 10px;
+    font-size: 12px;
+  }
+}
+</style>
+</head>
+<body>
+<div id="unity-container">
+  <canvas id="unity-canvas"></canvas>
+  <div id="loading-overlay">
+    <div>Unity 正在加载...</div>
+    <div id="progress-bar"><div id="progress-fill"></div></div>
+  </div>
+</div>
+
+<div id="controls">
+  <h3>手势控制面板 <span id="mode-badge" class="mode-badge">手势模式</span></h3>
+  
+  <!-- 输入源切换 -->
+  <div class="mode-selector">
+    <div id="mode-hand" class="mode-option active" onclick="setInputMode('hand')">✋ 手势识别</div>
+    <div id="mode-mouse" class="mode-option" onclick="setInputMode('mouse')">🖱️ 鼠标模拟手势</div>
+  </div>
+  
+  <div class="status-line">Unity 状态：<span id="unity-status">加载中</span></div>
+  <div class="status-line" id="input-status-line">输入源：<span id="input-source-status">手势识别</span></div>
+  <div class="status-line">摄像头状态：<span id="video-status">未开启</span></div>
+  <div class="status-line">识别状态：<span id="detect-status">等待开始</span></div>
+  <div class="status-line">控制模式：<span id="command-status">自由模式</span></div>
+  <div class="status-line">摄像机偏移：<span id="camera-offset-status">0%</span></div>
+
+  <div class="btn-row">
+    <button onclick="startCameraMode()" id="btnCamera">打开摄像头</button>
+    <button onclick="stopCameraMode()" id="btnStopCam">关闭摄像头</button>
+    <button onclick="startProcessing()" id="btnStartRec">开始识别</button>
+    <button onclick="stopProcessing()" id="btnStopRec">停止识别</button>
+    <button onclick="resetUnityView()">重置模型</button>
+  </div>
+  
+  <div class="mouse-tip" id="mouse-tip-area" style="display:none;">
+    🖱️ <strong>鼠标手势模式说明</strong><br>
+    • 左键拖拽 → 旋转模型<br>
+    • 左键单击 → 选择模型并显示信息<br>
+    • 鼠标滚轮 → 缩放模型，并按鼠标屏幕高度联动摄像机垂直偏移
+  </div>
+  
+  <div class="hint" id="hint-text">说明：手势模式 - 自由模式单手旋转，双手缩放可垂直移动摄像机。鼠标模式 - 左键旋转，滚轮缩放并联动摄像机垂直偏移。</div>
+  <div id="message-box"><div id="message-content"></div></div>
+</div>
+
+<div id="right-sidebar">
+  <div class="preview-wrap" id="preview-panel">
+    <div class="preview-inner">
+      <video class="input_video" playsinline muted autoplay></video>
+      <canvas class="output_canvas"></canvas>
+    </div>
+    <div class="preview-footer">摄像头预览 / 手部骨架调试</div>
+  </div>
+
+  <div id="model-info-panel">
+    <div id="model-info-header">模型信息</div>
+    <div id="model-info-content">
+      <div class="model-info-empty">等待 Unity 传来模型 JSON，点击模型后会显示在这里。</div>
+    </div>
+  </div>
+</div>
+
+<div id="gesture-cursor"></div>
+<div id="command-overlay">
+  <div id="command-overlay-title">点击模式</div>
+  <div id="command-overlay-text">模式已锁存。使用单手掌心移动光标，悬停点击判定由 Unity 负责。</div>
+</div>
+
+<!-- 底部功能按钮 -->
+<div id="bottom-action-bar">
+  <button class="bottom-action-btn" onclick="showAcupointMode()">穴位展示</button>
+  <button class="bottom-action-btn" onclick="enterSimulationTraining()">模拟实训</button>
+  <button class="bottom-action-btn" onclick="runSmartAnalysis()">智能分析</button>
+</div>
+
+
+<script>
+  const buildUrl = "./Build";
+  const loaderUrl = `${buildUrl}/text.loader.js`;
+  const unityConfig = {
+    dataUrl: `${buildUrl}/text.data`,
+    frameworkUrl: `${buildUrl}/text.framework.js`,
+    codeUrl: `${buildUrl}/text.wasm`,
+    streamingAssetsUrl: "StreamingAssets",
+    companyName: "YourCompany",
+    productName: "GestureUnityControl",
+    productVersion: "1.0",
+    matchWebGLToCanvasSize: true,
+    devicePixelRatio: 1
+  };
+
+  const MIN_TWO_HAND_DISTANCE = 0.18;
+  const PINCH_THRESHOLD = 0.055;
+  const CLICK_MOVE_THRESHOLD = 6;
+  const COMMAND_ENTER_HOLD_MS = 500;
+  const COMMAND_ENTER_STABLE_THRESHOLD = 0.025;
+  const COMMAND_TOGGLE_COOLDOWN_MS = 800;
+  const COMMAND_CURSOR_GAIN_X = 2400;
+  const COMMAND_CURSOR_GAIN_Y = 2000;
+  const COMMAND_CURSOR_SMOOTH = 0.22;
+  const SIM_CURSOR_SMOOTH = 0.18;
+  const SIM_PINCH_FILTER = 0.22;
+  const SIM_MAX_STEP_PX = 22;
+  const SIM_POSITION_DEADZONE_PX = 2.5;
+  const SIM_ACTIVATE_STABLE_FRAMES = 3;
+
+  const appState = {
+    unityInstance: null,
+    unityReady: false,
+    currentInputMode: "hand",
+    hands: null,
+    isProcessing: false,
+    animationId: null,
+    lastVideoTime: -1,
+    isSendingToHands: false,
+    videoReady: false,
+    cameraStream: null,
+    interactionMode: "free",
+    commandEnterHoldStart: 0,
+    commandEnterRef: null,
+    commandToggleCooldownUntil: 0,
+    commandCursorX: window.innerWidth / 2,
+    commandCursorY: window.innerHeight / 2,
+    commandPalmReference: null,
+    commandCursorBase: null,
+    isSimulationMode: false,
+    simulationPinchActive: false,
+    simulationCursorX: window.innerWidth / 2,
+    simulationCursorY: window.innerHeight / 2,
+    filteredPinchX: null,
+    filteredPinchY: null,
+    simulationStableFrames: 0,
+    mouseLeftDown: false,
+    mouseLastX: 0,
+    mouseDownX: 0,
+    mouseDownY: 0,
+    mouseDragDistance: 0,
+    handRotationActive: false,
+    handZoomActive: false,
+    handRefX: null,
+    handRefDist: null
+  };
+
+  const el = {
+    video: document.querySelector(".input_video"),
+    canvas: document.querySelector(".output_canvas"),
+    detectStatus: document.getElementById("detect-status"),
+    videoStatus: document.getElementById("video-status"),
+    modeBadge: document.getElementById("mode-badge"),
+    commandStatus: document.getElementById("command-status"),
+    cameraOffsetStatus: document.getElementById("camera-offset-status"),
+    commandOverlay: document.getElementById("command-overlay"),
+    commandOverlayTitle: document.getElementById("command-overlay-title"),
+    commandOverlayText: document.getElementById("command-overlay-text"),
+    gestureCursor: document.getElementById("gesture-cursor"),
+    inputSourceStatus: document.getElementById("input-source-status"),
+    mouseTipArea: document.getElementById("mouse-tip-area"),
+    hintText: document.getElementById("hint-text"),
+    previewPanel: document.getElementById("preview-panel"),
+    modelInfoHeader: document.getElementById("model-info-header"),
+    modelInfoContent: document.getElementById("model-info-content"),
+    unityStatus: document.getElementById("unity-status"),
+    loadingOverlay: document.getElementById("loading-overlay"),
+    progressFill: document.getElementById("progress-fill"),
+    modeHand: document.getElementById("mode-hand"),
+    modeMouse: document.getElementById("mode-mouse"),
+    messageContent: document.getElementById("message-content")
+  };
+  const canvasCtx = el.canvas.getContext("2d");
+
+  function escapeHtml(value) {
+    return String(value ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function addMessage(msg) {
+    const time = new Date().toLocaleTimeString();
+    const item = document.createElement("div");
+    item.textContent = `[${time}] ${msg}`;
+    el.messageContent.appendChild(item);
+    el.messageContent.scrollTop = el.messageContent.scrollHeight;
+    while (el.messageContent.children.length > 14) {
+      el.messageContent.removeChild(el.messageContent.children[0]);
+    }
+  }
+
+  function isUnityReady() {
+    return !!(appState.unityInstance && appState.unityReady);
+  }
+
+  function requireUnityReady(message) {
+    if (isUnityReady()) return true;
+    if (message) addMessage(message);
+    return false;
+  }
+
+  function sendToUnity(methodName, value) {
+    if (!isUnityReady()) return false;
+    try {
+      if (value === undefined) {
+        appState.unityInstance.SendMessage("ModelController", methodName);
+      } else {
+        appState.unityInstance.SendMessage("ModelController", methodName, value);
+      }
+      return true;
+    } catch (error) {
+      console.error("SendMessage failed:", methodName, error);
+      return false;
+    }
+  }
+
+  function clearUnityCursorState() {
+    sendToUnity("ClearCursorState");
+    updateCursorVisual(0, 0, false);
+  }
+
+  function updateCursorVisual(x, y, visible) {
+    if (!visible) {
+      el.gestureCursor.classList.remove("active");
+      return;
+    }
+    el.gestureCursor.classList.add("active");
+    el.gestureCursor.style.left = `${x}px`;
+    el.gestureCursor.style.top = `${y}px`;
+  }
+
+  function setCommandStatus(text) {
+    el.commandStatus.innerText = text;
+  }
+
+  function showCommandOverlay(title, text) {
+    el.commandOverlayTitle.innerText = title;
+    el.commandOverlayText.innerText = text;
+    el.commandOverlay.classList.add("active");
+  }
+
+  function hideCommandOverlay() {
+    el.commandOverlay.classList.remove("active");
+  }
+
+  function renderModelInfo(data) {
+    if (!el.modelInfoContent) return;
+
+    if (!data || typeof data !== "object") {
+      el.modelInfoHeader.innerText = "模型信息";
+      el.modelInfoContent.innerHTML = '<div class="model-info-empty">收到的数据格式不正确。</div>';
+      return;
+    }
+
+    const displayMode = data.displayMode || "model";
+
+    if (displayMode === "simulation") {
+      el.modelInfoHeader.innerText = data.panelTitle || "模拟实训";
+      const caseText = String(data.extra || "").trim();
+      el.modelInfoContent.innerHTML = `
+        <div class="model-info-title">${escapeHtml(data.panelTitle || "模拟实训")}</div>
+        <div class="model-info-grid">
+          <div class="model-info-item">
+            <div class="model-info-label">病例信息</div>
+            <div class="model-info-value">${caseText ? escapeHtml(caseText) : "暂无病例信息"}</div>
+          </div>
+        </div>
+      `;
+      return;
+    }
+
+    el.modelInfoHeader.innerText = "模型信息";
+    const orderedFields = [
+      ["title", "名称"],
+      ["id", "ID"],
+      ["meridian", "归经"],
+      ["location", "位置"],
+      ["method", "操作方法"],
+      ["description", "说明"],
+      ["extra", "补充信息"]
+    ];
+
+    const title = escapeHtml(data.title || data.id || "模型信息");
+    const itemsHtml = orderedFields
+      .filter(([key]) => data[key] !== undefined && data[key] !== null && String(data[key]).trim() !== "")
+      .map(([key, label]) => `
+        <div class="model-info-item">
+          <div class="model-info-label">${label}</div>
+          <div class="model-info-value">${escapeHtml(data[key])}</div>
+        </div>
+      `)
+      .join("");
+
+    el.modelInfoContent.innerHTML = itemsHtml
+      ? `<div class="model-info-title">${title}</div><div class="model-info-grid">${itemsHtml}</div>`
+      : '<div class="model-info-empty">收到 JSON，但里面没有可展示的字段。</div>';
+  }
+
+  function resetSimulationFilterState(resetCursor = false) {
+    appState.filteredPinchX = null;
+    appState.filteredPinchY = null;
+    appState.simulationStableFrames = 0;
+    if (resetCursor) {
+      appState.simulationCursorX = window.innerWidth / 2;
+      appState.simulationCursorY = window.innerHeight / 2;
+    }
+  }
+
+  function stopHandProcessingLoop() {
+    appState.isProcessing = false;
+    if (appState.animationId) {
+      cancelAnimationFrame(appState.animationId);
+      appState.animationId = null;
+    }
+  }
+
+  function exitCommandMode(showMsg = true) {
+    appState.interactionMode = "free";
+    appState.commandEnterHoldStart = 0;
+    appState.commandEnterRef = null;
+    appState.commandPalmReference = null;
+    appState.commandCursorBase = null;
+    clearUnityCursorState();
+    setCommandStatus("自由模式");
+    hideCommandOverlay();
+    if (showMsg) addMessage("退出点击模式");
+  }
+
+  function exitSimulationTraining(showMsg = true) {
+    if (!appState.isSimulationMode && !appState.simulationPinchActive) return;
+
+    appState.isSimulationMode = false;
+    appState.simulationPinchActive = false;
+    resetSimulationFilterState(false);
+    clearUnityCursorState();
+    updateCursorVisual(0, 0, false);
+    sendToUnity("SetNeedleVisible", "0");
+    sendToUnity("ExitSimulationMode");
+
+    if (showMsg) addMessage("已退出模拟实训模式");
+  }
+
+  function setInputMode(mode) {
+    appState.currentInputMode = mode;
+    const handMode = mode === "hand";
+    el.modeHand.classList.toggle("active", handMode);
+    el.modeMouse.classList.toggle("active", !handMode);
+    el.modeBadge.innerText = handMode ? "手势模式" : "鼠标模式";
+    el.inputSourceStatus.innerText = handMode ? "手势识别 (MediaPipe)" : "鼠标模拟手势";
+    el.mouseTipArea.style.display = handMode ? "none" : "block";
+    el.previewPanel.style.display = handMode ? "block" : "none";
+    el.hintText.innerHTML = handMode
+      ? "说明：手势模式 - 自由模式单手旋转，双手缩放可垂直移动摄像机。"
+      : "说明：鼠标模式 - 左键拖拽旋转、单击选择；滚轮缩放，并根据鼠标屏幕位置联动摄像机垂直偏移。";
+
+    if (handMode) {
+      addMessage("已切换到手势识别模式");
+      return;
+    }
+
+    stopHandProcessingLoop();
+    el.detectStatus.innerText = "鼠标模式激活";
+    exitCommandMode(false);
+    addMessage("已切换到鼠标模拟模式，使用鼠标控制模型");
+  }
+
+  function loadUnity() {
+    const script = document.createElement("script");
+    script.src = loaderUrl;
+    script.onload = () => {
+      createUnityInstance(document.querySelector("#unity-canvas"), unityConfig, progress => {
+        el.progressFill.style.width = `${progress * 100}%`;
+      }).then(instance => {
+        appState.unityInstance = instance;
+        window.unityInstance = instance;
+        el.loadingOverlay.style.display = "none";
+        el.unityStatus.innerText = "已加载";
+        addMessage("Unity WebGL 加载完成");
+      }).catch(error => {
+        console.error("Unity load failed:", error);
+        el.unityStatus.innerText = "加载失败";
+        addMessage(`Unity 加载失败: ${error}`);
+      });
+    };
+    script.onerror = () => {
+      el.unityStatus.innerText = "加载器脚本失败";
+      addMessage("Unity loader 脚本加载失败");
+    };
+    document.body.appendChild(script);
+  }
+
+  window.onUnityReady = function () {
+    appState.unityReady = true;
+    el.unityStatus.innerText = "已就绪";
+    addMessage("Unity 已就绪");
+    try {
+      appState.unityInstance.SendMessage("ModelController", "NotifyUnityReadyFromJS");
+    } catch (error) {
+      console.warn(error);
+    }
+  };
+
+  window.onUnityModelInfo = function (jsonText) {
+    console.log("Unity 发来的模型信息:", jsonText);
+    try {
+      const data = typeof jsonText === "string" ? JSON.parse(jsonText) : jsonText;
+      renderModelInfo(data);
+      addMessage(`收到模型信息: ${data.title || data.id || "未命名对象"}`);
+    } catch (error) {
+      console.error("模型信息 JSON 解析失败:", error, jsonText);
+      el.modelInfoContent.innerHTML = `
+        <div class="model-info-title">模型信息</div>
+        <div class="model-info-item">
+          <div class="model-info-label">原始 JSON</div>
+          <div class="model-info-value">${escapeHtml(jsonText)}</div>
+        </div>
+      `;
+      addMessage("收到模型信息，但 JSON 解析失败");
+    }
+  };
+
+  window.onUnityCursorPosition = function (x, y) {
+    if (appState.isSimulationMode) return;
+    if (appState.interactionMode !== "command" || x < -1000 || y < -1000) {
+      updateCursorVisual(0, 0, false);
+      return;
+    }
+    updateCursorVisual(x, y, true);
+  };
+
+  function resetUnityView() {
+    if (sendToUnity("ResetView")) addMessage("已发送重置模型指令");
+  }
+
+  function showAcupointMode() {
+    if (!requireUnityReady("Unity 尚未就绪，无法切换到穴位展示")) return;
+    exitSimulationTraining(false);
+    const ok = sendToUnity("ExitQuizMode");
+    addMessage(ok ? "已切换到穴位展示模式" : "切换穴位展示失败");
+  }
+
+  function enterSimulationTraining() {
+    if (!requireUnityReady("Unity 尚未就绪，无法进入模拟实训")) return;
+
+    exitCommandMode(false);
+    appState.isSimulationMode = true;
+    appState.simulationPinchActive = false;
+    appState.simulationCursorX = window.innerWidth / 2;
+    appState.simulationCursorY = window.innerHeight / 2;
+    resetSimulationFilterState(true);
+    clearUnityCursorState();
+
+    el.modelInfoHeader.innerText = "模拟实训";
+    el.modelInfoContent.innerHTML = `
+      <div class="model-info-title">模拟实训</div>
+      <div class="model-info-grid">
+        <div class="model-info-item">
+          <div class="model-info-label">病例信息</div>
+          <div class="model-info-value">正在向 Unity 请求病例信息，请稍候…</div>
+        </div>
+      </div>
+    `;
+
+    sendToUnity("ExitQuizMode");
+    const ok = sendToUnity("EnterSimulationMode");
+    el.detectStatus.innerText = "模拟实训：请拇指、食指、中指聚拢";
+    addMessage(ok ? "已进入模拟实训模式" : "进入模拟实训失败");
+  }
+
+  function runSmartAnalysis() {
+    exitSimulationTraining(false);
+    addMessage("智能分析功能暂未接入");
+  }
+
+  function performUnityScreenClick(x, y) {
+    sendToUnity("PerformScreenClick", `${x.toFixed(1)},${y.toFixed(1)}`);
+    el.detectStatus.innerText = "已选择模型";
+  }
+
+  function sendCursorToUnity(x, y) {
+    sendToUnity("SetCursorPosition", `${x.toFixed(1)},${y.toFixed(1)}`);
+  }
+
+  function initMouseControls() {
+    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("mousedown", onMouseDown);
+    window.addEventListener("mouseup", onMouseUp);
+    window.addEventListener("mouseleave", onMouseUp);
+    window.addEventListener("wheel", onMouseWheel, { passive: false });
+    window.addEventListener("contextmenu", event => {
+      if (appState.currentInputMode === "mouse") event.preventDefault();
+    });
+  }
+
+  function onMouseDown(event) {
+    if (appState.currentInputMode !== "mouse" || event.button !== 0) return;
+
+    appState.mouseDownX = event.clientX;
+    appState.mouseDownY = event.clientY;
+    appState.mouseDragDistance = 0;
+    appState.mouseLeftDown = true;
+    appState.mouseLastX = event.clientX;
+    event.preventDefault();
+  }
+
+  function onMouseUp(event) {
+    if (appState.currentInputMode !== "mouse" || event.button !== 0) return;
+
+    const wasLeftDown = appState.mouseLeftDown;
+    const treatAsClick = appState.mouseDragDistance <= CLICK_MOVE_THRESHOLD;
+    appState.mouseLeftDown = false;
+    sendToUnity("SetRotateDelta", "0");
+
+    if (wasLeftDown && treatAsClick) {
+      performUnityScreenClick(event.clientX, event.clientY);
+    }
+  }
+
+  function onMouseMove(event) {
+    if (appState.currentInputMode !== "mouse") return;
+
+    updateCursorVisual(0, 0, false);
+
+    if (!appState.mouseLeftDown) {
+      el.detectStatus.innerText = "鼠标模式 - 空闲";
+      return;
+    }
+
+    appState.mouseDragDistance = Math.max(
+      appState.mouseDragDistance,
+      Math.hypot(event.clientX - appState.mouseDownX, event.clientY - appState.mouseDownY)
+    );
+
+    const deltaX = event.clientX - appState.mouseLastX;
+    if (Math.abs(deltaX) > 0.25) {
+      const rotateDelta = Math.min(0.8, Math.max(-0.8, deltaX * 0.012));
+      sendToUnity("SetRotateDelta", rotateDelta.toFixed(4));
+    }
+
+    appState.mouseLastX = event.clientX;
+    el.detectStatus.innerText = "鼠标左键旋转中";
+  }
+
+  function onMouseWheel(event) {
+    if (appState.currentInputMode !== "mouse") return;
+
+    event.preventDefault();
+
+    const zoomDelta = Math.max(-0.05, Math.min(0.05, -event.deltaY * 0.0015));
+    if (Math.abs(zoomDelta) > 0.0001) {
+      sendToUnity("SetZoomDelta", zoomDelta.toFixed(4));
+    }
+
+    const normalizedY = Math.max(0, Math.min(1, event.clientY / window.innerHeight));
+    sendToUnity("SetCameraOffsetFromScreenY", normalizedY.toFixed(4));
+    el.cameraOffsetStatus.innerText = `${((1 - normalizedY) * 100).toFixed(0)}%`;
+    el.detectStatus.innerText = zoomDelta > 0 ? "鼠标滚轮放大中" : "鼠标滚轮缩小中";
+  }
+
+  function initHands() {
+    if (typeof Hands === "undefined") {
+      console.error("Hands 未加载");
+      return;
+    }
+    if (appState.hands) return;
+
+    const hands = new Hands({ locateFile: file => `./mediapipe/${file}` });
+    hands.setOptions({
+      maxNumHands: 2,
+      modelComplexity: 1,
+      minDetectionConfidence: 0.5,
+      minTrackingConfidence: 0.5
+    });
+    hands.onResults(onHandResults);
+    appState.hands = hands;
+    addMessage("MediaPipe Hands 初始化完成");
+  }
+
+  function isValidHand(hand) {
+    return Array.isArray(hand) && hand.length >= 21;
+  }
+
+  function hasPoint(hand, idx) {
+    return isValidHand(hand) && hand[idx] && typeof hand[idx].x === "number";
+  }
+
+  function dist2(a, b) {
+    return Math.hypot(a.x - b.x, a.y - b.y);
+  }
+
+  function getPalmCenter(hand) {
+    const indices = [0, 1, 5, 9, 13];
+    let sumX = 0;
+    let sumY = 0;
+    let count = 0;
+
+    for (const idx of indices) {
+      if (!hasPoint(hand, idx)) continue;
+      sumX += hand[idx].x;
+      sumY += hand[idx].y;
+      count += 1;
+    }
+
+    return count >= 5 ? { x: sumX / count, y: sumY / count } : null;
+  }
+
+  function isFist(hand) {
+    if (!isValidHand(hand)) return false;
+
+    const tips = [8, 12, 16, 20];
+    const pips = [6, 10, 14, 18];
+    let closed = 0;
+
+    for (let i = 0; i < tips.length; i += 1) {
+      if (!hasPoint(hand, tips[i]) || !hasPoint(hand, pips[i]) || !hasPoint(hand, 0)) continue;
+      if (dist2(hand[tips[i]], hand[0]) < dist2(hand[pips[i]], hand[0]) * 1.18) {
+        closed += 1;
+      }
+    }
+
+    return closed >= 3;
+  }
+
+  function getTwoPalmCenters(handList) {
+    if (handList.length < 2) return null;
+    const centers = handList.map(getPalmCenter).filter(Boolean);
+    if (centers.length < 2) return null;
+    centers.sort((a, b) => a.x - b.x);
+    return [centers[0], centers[1]];
+  }
+
+  function pickSinglePalmCenter(handList) {
+    for (const hand of handList) {
+      const center = getPalmCenter(hand);
+      if (center) return center;
+    }
+    return null;
+  }
+
+  function getPinchNeedlePoint(hand) {
+    if (!hasPoint(hand, 4) || !hasPoint(hand, 8) || !hasPoint(hand, 12)) return null;
+
+    const thumb = hand[4];
+    const indexTip = hand[8];
+    const middleTip = hand[12];
+
+    if (
+      dist2(thumb, indexTip) > PINCH_THRESHOLD ||
+      dist2(thumb, middleTip) > PINCH_THRESHOLD ||
+      dist2(indexTip, middleTip) > PINCH_THRESHOLD
+    ) {
+      return null;
+    }
+
+    return {
+      x: (thumb.x + indexTip.x + middleTip.x) / 3,
+      y: (thumb.y + indexTip.y + middleTip.y) / 3
+    };
+  }
+
+  function smoothSimulationPinchPoint(point) {
+    if (!point) return null;
+
+    if (appState.filteredPinchX === null || appState.filteredPinchY === null) {
+      appState.filteredPinchX = point.x;
+      appState.filteredPinchY = point.y;
+    } else {
+      appState.filteredPinchX += (point.x - appState.filteredPinchX) * SIM_PINCH_FILTER;
+      appState.filteredPinchY += (point.y - appState.filteredPinchY) * SIM_PINCH_FILTER;
+    }
+
+    return { x: appState.filteredPinchX, y: appState.filteredPinchY };
+  }
+
+  function drawHands(results, handList, width, height) {
+    el.canvas.width = width;
+    el.canvas.height = height;
+    canvasCtx.save();
+    canvasCtx.clearRect(0, 0, width, height);
+    if (results.image) {
+      canvasCtx.drawImage(results.image, 0, 0, width, height);
+    }
+    for (const hand of handList) {
+      drawConnectors(canvasCtx, hand, HAND_CONNECTIONS, { color: "#00FF00", lineWidth: 3 });
+      drawLandmarks(canvasCtx, hand, { color: "#FF0000", lineWidth: 2 });
+    }
+  }
+
+  function handleCommandToggleGesture(now, handList) {
+    if (appState.currentInputMode !== "hand") return false;
+
+    const pair = getTwoPalmCenters(handList);
+    const twoFists = handList.length >= 2 && isFist(handList[0]) && isFist(handList[1]);
+
+    if (!(pair && twoFists)) {
+      appState.commandEnterRef = null;
+      appState.commandEnterHoldStart = 0;
+      return false;
+    }
+
+    const [c1, c2] = pair;
+    if (!appState.commandEnterRef) {
+      appState.commandEnterRef = { c1: { x: c1.x, y: c1.y }, c2: { x: c2.x, y: c2.y } };
+      appState.commandEnterHoldStart = now;
+      el.detectStatus.innerText = appState.interactionMode === "command" ? "点击模式保持中" : "双拳保持中，准备切换点击模式";
+      return false;
+    }
+
+    const d1 = Math.hypot(c1.x - appState.commandEnterRef.c1.x, c1.y - appState.commandEnterRef.c1.y);
+    const d2 = Math.hypot(c2.x - appState.commandEnterRef.c2.x, c2.y - appState.commandEnterRef.c2.y);
+    const heldLongEnough = now - appState.commandEnterHoldStart >= COMMAND_ENTER_HOLD_MS;
+    const cooledDown = now >= appState.commandToggleCooldownUntil;
+
+    if (d1 > COMMAND_ENTER_STABLE_THRESHOLD || d2 > COMMAND_ENTER_STABLE_THRESHOLD || !heldLongEnough || !cooledDown) {
+      return false;
+    }
+
+    appState.commandToggleCooldownUntil = now + COMMAND_TOGGLE_COOLDOWN_MS;
+    appState.commandEnterRef = null;
+    appState.commandEnterHoldStart = 0;
+
+    if (appState.interactionMode === "free") {
+      appState.interactionMode = "command";
+      appState.commandPalmReference = null;
+      appState.commandCursorBase = null;
+      setCommandStatus("点击模式");
+      showCommandOverlay("点击模式已开启", "手势点击模式: 单手掌心移动光标，悬停点击");
+      el.detectStatus.innerText = "点击模式已开启";
+      addMessage("进入手势点击模式");
+    } else {
+      exitCommandMode();
+    }
+
+    return true;
+  }
+
+  function handleSimulationHands(handList) {
+    let pinchPoint = null;
+    for (const hand of handList) {
+      pinchPoint = getPinchNeedlePoint(hand);
+      if (pinchPoint) break;
+    }
+
+    if (!pinchPoint) {
+      if (appState.simulationPinchActive) {
+        appState.simulationPinchActive = false;
+        clearUnityCursorState();
+        sendToUnity("SetNeedleVisible", "0");
+      }
+      resetSimulationFilterState(false);
+      updateCursorVisual(0, 0, false);
+      el.detectStatus.innerText = handList.length > 0
+        ? "模拟实训：手势不标准，请拇指、食指、中指聚拢"
+        : "模拟实训：请将手放入摄像头范围";
+      return;
+    }
+
+    const smoothedPoint = smoothSimulationPinchPoint(pinchPoint);
+    appState.simulationStableFrames += 1;
+
+    const screenX = (1 - smoothedPoint.x) * window.innerWidth;
+    const screenY = smoothedPoint.y * window.innerHeight;
+
+    if (!appState.simulationPinchActive && appState.simulationStableFrames >= SIM_ACTIVATE_STABLE_FRAMES) {
+      appState.simulationPinchActive = true;
+      appState.simulationCursorX = screenX;
+      appState.simulationCursorY = screenY;
+    }
+
+    if (!appState.simulationPinchActive) {
+      updateCursorVisual(0, 0, false);
+      sendToUnity("SetNeedleVisible", "0");
+      el.detectStatus.innerText = "模拟实训：正在稳定持针...";
+      return;
+    }
+
+    let deltaX = screenX - appState.simulationCursorX;
+    let deltaY = screenY - appState.simulationCursorY;
+    const deltaLen = Math.hypot(deltaX, deltaY);
+
+    if (deltaLen > SIM_MAX_STEP_PX) {
+      const scale = SIM_MAX_STEP_PX / deltaLen;
+      deltaX *= scale;
+      deltaY *= scale;
+    }
+
+    if (Math.abs(deltaX) > SIM_POSITION_DEADZONE_PX) {
+      appState.simulationCursorX += deltaX * SIM_CURSOR_SMOOTH;
+    }
+    if (Math.abs(deltaY) > SIM_POSITION_DEADZONE_PX) {
+      appState.simulationCursorY += deltaY * SIM_CURSOR_SMOOTH;
+    }
+
+    appState.simulationCursorX = Math.max(0, Math.min(window.innerWidth, appState.simulationCursorX));
+    appState.simulationCursorY = Math.max(0, Math.min(window.innerHeight, appState.simulationCursorY));
+
+    sendCursorToUnity(appState.simulationCursorX, appState.simulationCursorY);
+    sendToUnity("SetNeedleScreenPosition", `${appState.simulationCursorX.toFixed(1)},${appState.simulationCursorY.toFixed(1)}`);
+    sendToUnity("SetNeedleVisible", "1");
+    updateCursorVisual(appState.simulationCursorX, appState.simulationCursorY, true);
+    el.detectStatus.innerText = "模拟实训：持针移动中（已稳定）";
+  }
+
+  function handleCommandCursorHands(handList) {
+    const palm = pickSinglePalmCenter(handList);
+    if (!palm) {
+      el.detectStatus.innerText = "点击模式：等待手";
+      return;
+    }
+
+    if (!appState.commandPalmReference) {
+      appState.commandPalmReference = { x: palm.x, y: palm.y };
+      appState.commandCursorBase = { x: appState.commandCursorX, y: appState.commandCursorY };
+    }
+
+    const offX = palm.x - appState.commandPalmReference.x;
+    const offY = palm.y - appState.commandPalmReference.y;
+    const targetX = appState.commandCursorBase.x - offX * COMMAND_CURSOR_GAIN_X;
+    const targetY = appState.commandCursorBase.y + offY * COMMAND_CURSOR_GAIN_Y;
+
+    appState.commandCursorX += (targetX - appState.commandCursorX) * COMMAND_CURSOR_SMOOTH;
+    appState.commandCursorY += (targetY - appState.commandCursorY) * COMMAND_CURSOR_SMOOTH;
+    appState.commandCursorX = Math.max(0, Math.min(window.innerWidth, appState.commandCursorX));
+    appState.commandCursorY = Math.max(0, Math.min(window.innerHeight, appState.commandCursorY));
+
+    sendCursorToUnity(appState.commandCursorX, appState.commandCursorY);
+    el.detectStatus.innerText = "点击模式：光标移动";
+  }
+
+  function handleFreeHands(handList) {
+    if (handList.length >= 2) {
+      const centers = getTwoPalmCenters(handList);
+      if (!centers) return;
+
+      const distance = dist2(centers[0], centers[1]);
+      const centerY = (centers[0].y + centers[1].y) / 2;
+      sendToUnity("SetHandsCenterY", centerY.toFixed(4));
+
+      if (distance > MIN_TWO_HAND_DISTANCE) {
+        if (!appState.handZoomActive) {
+          appState.handZoomActive = true;
+          appState.handRefDist = distance;
+        } else {
+          const delta = distance - appState.handRefDist;
+          if (Math.abs(delta) > 0.008) {
+            const zoomDelta = Math.max(-0.03, Math.min(0.03, delta)) * 1.2;
+            sendToUnity("SetZoomDelta", zoomDelta.toFixed(4));
+          }
+          appState.handRefDist = distance;
+        }
+
+        appState.handRotationActive = false;
+        appState.handRefX = null;
+        sendToUnity("SetRotateDelta", "0");
+        el.detectStatus.innerText = `双手缩放 | 垂直偏移:${((1 - centerY) * 100).toFixed(0)}%`;
+      } else {
+        appState.handZoomActive = false;
+        appState.handRefDist = null;
+        el.detectStatus.innerText = "双手检测中";
+      }
+      return;
+    }
+
+    if (handList.length === 1) {
+      appState.handZoomActive = false;
+      appState.handRefDist = null;
+
+      const palm = getPalmCenter(handList[0]);
+      if (palm) {
+        const normalizedX = 1 - palm.x;
+        if (!appState.handRotationActive) {
+          appState.handRotationActive = true;
+          appState.handRefX = normalizedX;
+        } else {
+          const deltaX = normalizedX - appState.handRefX;
+          sendToUnity("SetRotateDelta", (deltaX * 1.6).toFixed(4));
+          appState.handRefX = normalizedX;
+        }
+      }
+
+      el.detectStatus.innerText = "单手旋转中";
+      return;
+    }
+
+    appState.handRotationActive = false;
+    appState.handZoomActive = false;
+    appState.handRefX = null;
+    appState.handRefDist = null;
+    sendToUnity("SetRotateDelta", "0");
+    el.detectStatus.innerText = "未检测到手";
+  }
+
+  function onHandResults(results) {
+    if (appState.currentInputMode !== "hand") return;
+
+    const width = el.video.videoWidth;
+    const height = el.video.videoHeight;
+    if (!width || !height) return;
+
+    const handList = (results.multiHandLandmarks || []).filter(isValidHand);
+    drawHands(results, handList, width, height);
+
+    const now = performance.now();
+    if (handleCommandToggleGesture(now, handList)) {
+      canvasCtx.restore();
+      return;
+    }
+
+    if (appState.isSimulationMode) {
+      handleSimulationHands(handList);
+      canvasCtx.restore();
+      return;
+    }
+
+    if (appState.interactionMode === "command") {
+      handleCommandCursorHands(handList);
+      canvasCtx.restore();
+      return;
+    }
+
+    handleFreeHands(handList);
+    canvasCtx.restore();
+  }
+
+  function resizePreviewCanvas() {
+    const { videoWidth, videoHeight } = el.video;
+    if (!videoWidth || !videoHeight) return;
+    el.canvas.width = videoWidth;
+    el.canvas.height = videoHeight;
+  }
+
+  async function startCameraMode() {
+    if (appState.currentInputMode !== "hand") {
+      addMessage("当前为鼠标模式，无需打开摄像头");
+      return;
+    }
+
+    stopHandProcessingLoop();
+    stopCameraMode();
+
+    try {
+      appState.cameraStream = await navigator.mediaDevices.getUserMedia({
+        video: { facingMode: "user", width: { ideal: 640 }, height: { ideal: 480 } },
+        audio: false
+      });
+      el.video.srcObject = appState.cameraStream;
+      el.videoStatus.innerText = "摄像头打开中";
+      el.video.onloadedmetadata = async () => {
+        await el.video.play();
+        if (!el.video.videoWidth) return;
+        appState.videoReady = true;
+        resizePreviewCanvas();
+        el.videoStatus.innerText = "摄像头已就绪";
+        el.detectStatus.innerText = "可开始识别";
+        addMessage("摄像头就绪");
+      };
+    } catch (error) {
+      appState.videoReady = false;
+      el.videoStatus.innerText = "打开失败";
+      addMessage(`摄像头失败:${error}`);
+    }
+  }
+
+  function stopCameraMode() {
+    if (appState.cameraStream) {
+      appState.cameraStream.getTracks().forEach(track => track.stop());
+      appState.cameraStream = null;
+    }
+    if (el.video.srcObject) {
+      el.video.srcObject = null;
+    }
+    appState.videoReady = false;
+    el.videoStatus.innerText = "已关闭";
+  }
+
+  function startProcessing() {
+    if (appState.currentInputMode === "mouse") {
+      addMessage("鼠标模式下无需启动识别，直接使用鼠标控制");
+      el.detectStatus.innerText = "鼠标模式已激活";
+      return;
+    }
+
+    if (!el.video.srcObject) {
+      addMessage("请先打开摄像头");
+      return;
+    }
+
+    initHands();
+    if (!appState.hands) return;
+    if (!appState.videoReady) {
+      addMessage("摄像头未就绪");
+      return;
+    }
+
+    stopHandProcessingLoop();
+    appState.isProcessing = true;
+    appState.lastVideoTime = -1;
+    exitCommandMode(false);
+
+    const loop = () => {
+      if (!appState.isProcessing || appState.currentInputMode !== "hand") return;
+
+      appState.animationId = requestAnimationFrame(loop);
+      const canProcess = appState.videoReady
+        && !el.video.paused
+        && el.video.readyState >= 2
+        && el.video.videoWidth
+        && !appState.isSendingToHands
+        && appState.hands;
+
+      if (!canProcess || el.video.currentTime === appState.lastVideoTime) return;
+
+      appState.lastVideoTime = el.video.currentTime;
+      appState.isSendingToHands = true;
+      appState.hands.send({ image: el.video }).finally(() => {
+        appState.isSendingToHands = false;
+      });
+    };
+
+    loop();
+    el.detectStatus.innerText = "手势识别运行中";
+  }
+
+  function stopProcessing() {
+    stopHandProcessingLoop();
+    el.detectStatus.innerText = appState.currentInputMode === "hand" ? "已停止识别" : "鼠标模式";
+  }
+
+  window.startCameraMode = startCameraMode;
+  window.stopCameraMode = stopCameraMode;
+  window.startProcessing = startProcessing;
+  window.stopProcessing = stopProcessing;
+  window.resetUnityView = resetUnityView;
+  window.showAcupointMode = showAcupointMode;
+  window.enterSimulationTraining = enterSimulationTraining;
+  window.runSmartAnalysis = runSmartAnalysis;
+  window.setInputMode = setInputMode;
+
+  window.onload = function () {
+    loadUnity();
+    initMouseControls();
+    setInputMode("hand");
+    addMessage("页面初始化完成 | 手势模式 + 普通三维鼠标查看模式已启用");
+  };
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
