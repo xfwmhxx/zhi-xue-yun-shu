@@ -163,6 +163,7 @@ const router = useRouter()
 // 定义实验室路由映射表
 const labRoutes: Record<string, string> = {
   'acupoint-3d': '/Unity/Lab001',
+  'acupuncture-vr': '/Unity/Lab002',
   'meridian-vr': '/Unity/Lab003',
 }
 
@@ -218,6 +219,17 @@ const labs = [
     tags: ['VR支持', '3D互动', '穴位标注'],
     progress: 65,
     progressText: '开发进度 65% · 基础功能已完成',
+  },
+  {
+    id: 'acupuncture-vr',
+    title: '四诊模拟实验室',
+    description: '融入视觉小说叙事的沉浸式四诊交互模拟。',
+    icon: 'fas fa-hand-peace',
+    status: 'active',
+    statusText: '体验中',
+    tags: ['问诊', '望诊', '医案', '模拟'],
+    progress: 35,
+    progressText: '开发进度 75% · 基础功能已完成',
   },
   {
     id: 'meridian-vr',

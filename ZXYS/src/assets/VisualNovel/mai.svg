@@ -1,0 +1,32 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" fill="#f8f5f0"/>
+
+  <line x1="100" y1="320" x2="700" y2="320" stroke="#333" stroke-width="1.5"/>
+  <text x="700" y="340" font-family="Arial" font-size="16" fill="#555">按压力度</text>
+
+  <line x1="100" y1="320" x2="100" y2="80" stroke="#333" stroke-width="1.5"/>
+  <text x="80" y="40" font-family="Arial" font-size="16" fill="#555" text-anchor="end">脉动幅度</text>
+
+  <text x="200" y="350" font-family="Arial" font-size="14" fill="#666">轻取</text>
+  <text x="400" y="350" font-family="Arial" font-size="14" fill="#666">中取</text>
+  <text x="600" y="350" font-family="Arial" font-size="14" fill="#666">沉取</text>
+
+  <path d="M150,240 
+           Q170,230 190,240 
+           T230,240 
+           T270,240 
+           T310,240
+           
+           M310,220 
+           Q330,200 350,220
+           Q370,240 390,220
+           Q410,200 430,220
+           
+           M430,260
+           Q450,270 470,265
+           Q490,260 510,262
+           Q530,264 550,261
+           Q570,260 590,260
+           L650,260" 
+        fill="none" stroke="#2d7dbb" stroke-width="2"/>
+</svg>

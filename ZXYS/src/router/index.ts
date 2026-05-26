@@ -19,8 +19,7 @@ import ZYYS from '@/views/ZYYS.vue'
 import ZCYJ from '@/views/ZCYJ.vue'
 import GJHS from '@/views/GJHS.vue'
 import FJPW from '@/views/FJPW.vue'
-
-
+import ZYSZ from '@/views/ZYSZ.vue'
 import AIYS from '@/views/AIYS.vue'
 import SimulatedPracticeExercises from '@/views/SimulatedPracticeExercises.vue'
 import InterviewResult from '@/views/InterviewResult.vue'
@@ -43,6 +42,7 @@ import Test from '@/views/test.vue'
 import Manager from '@/views/Manager.vue'
 
 import UnityLab001 from '@/views/UnityLab001.vue'
+import UnityLab002 from '@/views/UnityLab002.vue'
 import UnityLab003 from '@/views/UnityLab003.vue'
 
 const router = createRouter({
@@ -182,7 +182,11 @@ const router = createRouter({
           name: 'FJPW',
           component: FJPW,
         },
-
+        {
+          path: 'ZYSZ',
+          name: 'ZYSZ',
+          component: ZYSZ,
+        },
         {
           path: 'AIYS',
           name: 'AIYS',
@@ -244,7 +248,11 @@ const router = createRouter({
           name: 'UnityLab001',
           component: UnityLab001,
         },
-
+        {
+          path: 'Lab002',
+          name: 'UnityLab002',
+          component: UnityLab002,
+        },
         {
           path: 'Lab003',
           name: 'UnityLab003',

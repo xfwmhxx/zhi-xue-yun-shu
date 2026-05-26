@@ -78,8 +78,15 @@
           :image-url="ZYCD"
           @module-click="handleModuleClick"
         />
-
-
+        <!--中医舌诊 -->
+        <ModuleCard
+          :module-id="7"
+          module-name="中医舌诊"
+          module-desc="通过观察舌头的形态、颜色、舌苔等特征来诊断疾病，提供舌诊图谱和相关信息，帮助用户了解舌诊的基本知识和应用。"
+          link-to="/Hina/ZYSZ"
+          :image-url="ZYSZ"
+          @module-click="handleModuleClick"
+        />
         <!--AI医生 -->
         <ModuleCard
           :module-id="8"
@@ -102,7 +109,7 @@ import ZYYS from '@/assets/HomePage/ZYYS/ZYYS.png'
 import ZCYJ from '@/assets/HomePage/ZCYJ/ZCYJ.png'
 import GJHS from '@/assets/HomePage/GJHS/GJHS.png'
 import ZYCD from '@/assets/HomePage/ZYCD/ZYCD.png'
-
+import ZYSZ from '@/assets/HomePage/ZYSZ/ZYSZ.png'
 import AIYS from '@/assets/HomePage/AIYS/AIYS.png'
 import { onMounted } from 'vue'
 
